@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Redirecting to payment — Wild Wander Tours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --selva:#13231A; --verde:#235C3F; --verde-deep:#1A3F2C;
+  --lienzo:#F4EEE2; --surface:#FBF8F1; --arcilla:#C4552B;
+  --oro:#E6A02C; --oro-soft:#F0C877; --ink:#1B271F; --muted:#5C6B5F;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--verde-deep);color:var(--lienzo);font-family:"Hanken Grotesk",system-ui,sans-serif;
+  display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}
+.card{max-width:440px}
+.eyebrow{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro-soft);margin:0 0 14px}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.7rem;line-height:1.2;margin:0 0 14px;color:var(--lienzo)}
+p{color:rgba(244,238,226,.85);font-size:1rem;line-height:1.55;margin:0 0 26px}
+.spinner{width:34px;height:34px;border-radius:50%;border:3px solid rgba(244,238,226,.25);border-top-color:var(--oro);
+  animation:spin .8s linear infinite;margin:0 auto 26px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fallback{display:none;margin-top:6px}
+.fallback.show{display:block}
+#manualLink{display:inline-flex;align-items:center;gap:.5em;font-family:"Hanken Grotesk";font-weight:600;font-size:.95rem;
+  background:var(--oro);color:var(--selva);padding:13px 22px;border-radius:100px;text-decoration:none;margin:6px}
+.tourlist{margin-top:18px}
+.tourlist a{display:block;color:var(--oro-soft);text-decoration:underline;margin:8px 0;font-size:.92rem}
+@media (prefers-reduced-motion:reduce){.spinner{animation:none;border-top-color:rgba(244,238,226,.25)}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spinner" aria-hidden="true" id="spinner"></div>
+  <p class="eyebrow">Wild Wander Tours</p>
+  <h1 id="heading">Taking you to secure payment…</h1>
+  <p id="subtext">Hang tight — you'll land on Stripe to complete your deposit in just a moment.</p>
+
+  <div class="fallback" id="fallback">
+    <p style="margin-bottom:16px">Redirect not showing up? Tap below to continue.</p>
+    <a id="manualLink" href="#">Continue to payment →</a>
+  </div>
+
+  <div class="fallback" id="notFound">
+    <p style="margin-bottom:10px">We couldn't tell which tour this deposit is for. Pick yours below, or email us and we'll sort it out.</p>
+    <div class="tourlist">
+      <a href="https://book.stripe.com/3cI3cuej32SA6jUbvGgUM05">Antioquia Tour</a>
+      <a href="https://book.stripe.com/aFadR8deZ3WE37I9nygUM04">City to Sea Tour</a>
+      <a href="https://book.stripe.com/9B6cN47UFal2dMm7fqgUM03">La Guajira Tour</a>
+    </div>
+    <p style="margin-top:18px"><a href="mailto:info@wildwandertours.com" style="color:var(--oro-soft)">info@wildwandertours.com</a></p>
+  </div>
+</div>
+
+<script>
+var STRIPE_LINKS = {
+  "Antioquia Tour": "https://book.stripe.com/3cI3cuej32SA6jUbvGgUM05",
+  "City to Sea Tour": "https://book.stripe.com/aFadR8deZ3WE37I9nygUM04",
+  "La Guajira Tour": "https://book.stripe.com/9B6cN47UFal2dMm7fqgUM03"
+};
+
+function normalize(s){ return (s || "").trim().toLowerCase(); }
+
+var params = new URLSearchParams(window.location.search);
+var tourParam = params.get("tour");
+var target = null;
+
+if(tourParam){
+  var wanted = normalize(tourParam);
+  for(var key in STRIPE_LINKS){
+    if(normalize(key) === wanted){ target = STRIPE_LINKS[key]; break; }
+  }
+}
+
+if(target){
+  document.getElementById("manualLink").href = target;
+  document.getElementById("fallback").classList.add("show");
+  window.location.replace(target);
+} else {
+  document.getElementById("spinner").style.display = "none";
+  document.getElementById("heading").textContent = "Which tour is this for?";
+  document.getElementById("subtext").textContent = "";
+  document.getElementById("notFound").classList.add("show");
+}
+</script>
+</body>
+</html>

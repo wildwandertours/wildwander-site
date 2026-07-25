@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="images/img-01-16824a4442c6.png">
+<title>Wild Wander Tours — Cultural & adventure travel in Colombia</title>
+<meta name="description" content="Small-group cultural and adventure tours across Colombia — from the cloud-forest towns of Antioquia to the Pacific jungle and the La Guajira desert. Led by guides, trained in wilderness first response.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --selva:#13231A;       /* darkest forest green - ink */
+  --verde:#235C3F;       /* emerald brand */
+  --verde-deep:#1A3F2C;
+  --lienzo:#F4EEE2;       /* warm paper bg */
+  --surface:#FBF8F1;      /* light card */
+  --arcilla:#C4552B;      /* terracotta */
+  --oro:#E6A02C;          /* marigold accent */
+  --oro-soft:#F0C877;
+  --ink:#1B271F;
+  --muted:#5C6B5F;
+  --line:rgba(19,35,26,.14);
+  --shadow:0 18px 50px -28px rgba(19,35,26,.55);
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--lienzo);color:var(--ink);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.08;margin:0;color:var(--selva);letter-spacing:-.01em}
+p{margin:0 0 1rem}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.eyebrow{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--arcilla);margin:0 0 .9rem;display:flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--arcilla);display:inline-block;opacity:.7}
+.eyebrow.center{justify-content:center}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.55em;font-family:"Hanken Grotesk";font-weight:600;font-size:.96rem;
+  padding:.85em 1.5em;border-radius:100px;text-decoration:none;cursor:pointer;border:1.5px solid transparent;
+  transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease;letter-spacing:.01em}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--oro);color:var(--selva);box-shadow:0 10px 24px -12px rgba(230,160,44,.9)}
+.btn-gold:hover{background:#f1ad3c}
+.btn-dark{background:var(--selva);color:var(--lienzo)}
+.btn-dark:hover{background:#0c1812}
+.btn-ghost{border-color:rgba(244,238,226,.55);color:var(--lienzo)}
+.btn-ghost:hover{background:rgba(244,238,226,.12)}
+.btn-line{border-color:var(--selva);color:var(--selva)}
+.btn-line:hover{background:var(--selva);color:var(--lienzo)}
+.btn .arr{transition:transform .2s ease}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* ---------- nav ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .35s ease,box-shadow .35s ease,padding .35s ease;padding:18px 0}
+header.solid{background:rgba(244,238,226,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;cursor:pointer;flex-shrink:0}
+.brand svg{width:30px;height:30px;flex-shrink:0}
+.brand .logo{width:40px;height:40px;flex-shrink:0;object-fit:contain}
+footer .brand .logo{width:56px;height:56px}
+.brand .bname{font-family:"Fraunces";font-weight:600;font-size:1.28rem;color:var(--lienzo);line-height:1;letter-spacing:-.01em}
+.brand .btag{font-family:"DM Mono",monospace;font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--oro-soft);display:block;margin-top:3px}
+header.solid .brand .bname{color:var(--selva)}
+header.solid .brand .btag{color:var(--arcilla)}
+.navlinks{display:flex;align-items:center;gap:30px;margin:0;padding:0;list-style:none}
+.navlinks a{font-size:.94rem;font-weight:500;text-decoration:none;color:var(--lienzo);opacity:.9;cursor:pointer;position:relative;padding:4px 0}
+.navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1.5px;background:var(--oro);transition:right .25s ease}
+.navlinks a:hover{opacity:1}
+.navlinks a:hover::after,.navlinks a.active::after{right:0}
+.navlinks a.active{opacity:1}
+header.solid .navlinks a{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.menu-btn span{width:24px;height:2px;background:var(--lienzo);display:block;transition:.3s}
+header.solid .menu-btn span{background:var(--selva)}
+
+/* ---------- pages ---------- */
+.page{display:none;animation:fade .5s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;background:var(--verde-deep);overflow:hidden}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;}
+.hero-img video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,24,18,.55) 0%,rgba(13,24,18,.15) 35%,rgba(13,24,18,.55) 70%,rgba(13,24,18,.92) 100%)}
+.hero-inner{position:relative;z-index:2;padding-bottom:clamp(48px,9vh,110px);padding-top:140px;width:100%}
+.hero .eyebrow{color:var(--oro-soft)}
+.hero .eyebrow::before{background:var(--oro-soft)}
+.hero h1{color:var(--lienzo);font-size:clamp(2.7rem,7vw,5.4rem);font-weight:500;max-width:15ch;text-wrap:balance}
+.hero h1 em{font-style:italic;color:var(--oro-soft)}
+.hero .lede{color:rgba(244,238,226,.9);font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:48ch;margin:1.4rem 0 2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(36px,6vh,64px);border-top:1px solid rgba(244,238,226,.25);padding-top:22px}
+.hero-meta div{padding-right:38px;margin-right:38px;border-right:1px solid rgba(244,238,226,.2)}
+.hero-meta div:last-child{border:0;margin:0;padding:0}
+.hero-meta .n{font-family:"Fraunces";font-size:1.7rem;color:var(--lienzo);line-height:1}
+.hero-meta .l{font-family:"DM Mono",monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-soft);margin-top:6px}
+
+/* ---------- generic section ---------- */
+.section{padding:clamp(70px,10vw,130px) 0}
+.section.tight{padding:clamp(50px,7vw,84px) 0}
+.lead-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.section h2{font-size:clamp(2rem,4.2vw,3.4rem)}
+.section .sub{color:var(--muted);max-width:52ch}
+
+/* values / difference */
+.values{background:var(--selva);color:var(--lienzo)}
+.values h2,.values h3{color:var(--lienzo)}
+.values .eyebrow{color:var(--oro-soft)}
+.values .eyebrow::before{background:var(--oro-soft)}
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:56px;background:rgba(244,238,226,.16);border:1px solid rgba(244,238,226,.16);border-radius:18px;overflow:hidden}
+.value-card{background:var(--selva);padding:34px 28px}
+.value-card .vnum{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.2em;color:var(--oro);margin-bottom:30px}
+.value-card h3{font-size:1.32rem;margin-bottom:10px}
+.value-card p{color:rgba(244,238,226,.72);font-size:.95rem;margin:0}
+
+/* ---------- tour cards ---------- */
+.tours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
+.tour-card{background:var(--surface);border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);
+  display:flex;flex-direction:column;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.tour-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(19,35,26,.6)}
+.tc-img{aspect-ratio:4/3.1;background:var(--verde-deep) center/cover no-repeat;position:relative}
+.tc-tag{position:absolute;top:14px;left:14px;background:rgba(19,35,26,.78);color:var(--lienzo);backdrop-filter:blur(4px);
+  font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:100px}
+.tc-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
+.tc-route{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.1em;color:var(--arcilla);text-transform:uppercase;margin-bottom:10px}
+.tc-body h3{font-size:1.6rem;margin-bottom:12px}
+.tc-body p{color:var(--muted);font-size:.95rem;flex:1}
+.tc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.tc-price{font-family:"Fraunces";font-size:1.35rem;color:var(--selva)}
+.tc-price span{font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;display:block;margin-top:2px}
+.tc-go{font-weight:600;font-size:.9rem;color:var(--verde);display:inline-flex;gap:.4em;align-items:center}
+.tour-card:hover .tc-go .arr{transform:translateX(3px)}
+.tc-go .arr{transition:transform .2s}
+
+@media(min-width:761px){#allTours{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- custom itinerary card ---------- */
+.custom-card{border:1.5px dashed var(--verde)}
+.tc-img.custom-img{background:var(--verde-deep);display:flex;align-items:center;justify-content:center}
+.tc-img.custom-img svg{width:44px;height:44px;opacity:.55}
+
+/* ---------- custom itinerary modal ---------- */
+.modal-overlay{position:fixed;inset:0;background:rgba(19,35,26,.6);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;z-index:500;padding:24px}
+.modal-overlay.open{display:flex}
+.modal-panel{background:var(--surface);border-radius:20px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;
+  padding:clamp(28px,4vw,44px);position:relative;box-shadow:0 40px 90px -30px rgba(19,35,26,.7)}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;font-size:1.3rem;line-height:1;cursor:pointer;color:var(--muted)}
+.modal-close:hover{background:var(--lienzo)}
+.modal-panel h2{margin:6px 0 10px;font-size:clamp(1.5rem,3vw,2rem)}
+.modal-panel .sub{color:var(--muted);font-size:.92rem;margin-bottom:10px}
+.modal-field{display:block;margin-top:16px}
+.modal-field span{display:block;font-family:"DM Mono",monospace;font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.modal-field input,.modal-field textarea{display:block;width:100%;padding:12px 14px;border:1px solid var(--line);
+  border-radius:10px;font-family:"Hanken Grotesk";font-size:.95rem;background:#fff;color:var(--ink);resize:vertical}
+.modal-field input:focus,.modal-field textarea:focus{outline:2px solid var(--oro);outline-offset:1px}
+.modal-panel button[type=submit]{margin-top:24px;width:100%;justify-content:center}
+.modal-note{font-size:.78rem;color:var(--muted);margin-top:12px}
+
+/* ---------- about teaser ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:center}
+.split-img{border-radius:20px;overflow:hidden;background:var(--verde-deep);aspect-ratio:4/4.6;box-shadow:var(--shadow)}
+.split-img img{width:100%;height:100%;object-fit:cover}
+.founders{display:flex;gap:18px;margin-top:30px}
+.founder{display:flex;gap:14px;align-items:flex-start}
+.mono-av{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;background:var(--verde);color:var(--lienzo);
+  font-family:"Fraunces";font-size:1.2rem;border:2px solid var(--oro)}
+.av{display:block;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid var(--oro);background:var(--verde-deep)}
+.founder .av{width:52px;height:52px}
+.bio-card .av{width:110px;height:110px;margin-bottom:20px;box-shadow:var(--shadow)}
+.founder .fn{font-weight:700;font-size:.98rem}
+.founder .fr{font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+
+/* ---------- CTA band ---------- */
+.band{position:relative;background:var(--verde-deep);color:var(--lienzo);overflow:hidden;border-radius:24px}
+.band-img{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.32}
+.band-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--verde-deep) 10%,rgba(26,63,44,.5) 100%)}
+.band-inner{position:relative;z-index:2;padding:clamp(48px,7vw,84px);max-width:62ch}
+.band h2{color:var(--lienzo);font-size:clamp(1.9rem,3.6vw,2.9rem)}
+.band p{color:rgba(244,238,226,.85)}
+.band .eyebrow{color:var(--oro-soft)}.band .eyebrow::before{background:var(--oro-soft)}
+
+/* ---------- tour detail ---------- */
+.detail-hero{position:relative;min-height:74svh;display:flex;align-items:flex-end;background:var(--verde-deep);overflow:hidden}
+.detail-hero .hero-img::after{background:linear-gradient(180deg,rgba(13,24,18,.5) 0,rgba(13,24,18,.2) 40%,rgba(13,24,18,.9) 100%)}
+.detail-hero .hero-inner{padding-top:150px;padding-bottom:48px}
+.detail-hero .back{display:inline-flex;align-items:center;gap:.5em;color:var(--oro-soft);font-family:"DM Mono",monospace;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;margin-bottom:20px}
+.detail-hero .back:hover{color:var(--lienzo)}
+.detail-hero h1{color:var(--lienzo);font-size:clamp(2.4rem,6vw,4.4rem)}
+.detail-hero .route{font-family:"DM Mono",monospace;color:var(--oro-soft);letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;margin-bottom:14px}
+.detail-hero .dlede{color:rgba(244,238,226,.9);max-width:55ch;margin-top:1rem;font-size:1.12rem}
+
+.facts{background:var(--selva);color:var(--lienzo);padding:26px 0}
+.facts-row{display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:space-between}
+.facts-stats{display:flex;flex-wrap:wrap;gap:0}
+.facts-stats div{padding:0 28px;border-right:1px solid rgba(244,238,226,.18)}
+.facts-stats div:first-child{padding-left:0}
+.facts-stats div:last-child{border:0}
+.facts-stats .n{font-family:"Fraunces";font-size:1.45rem;color:var(--oro-soft)}
+.facts-stats .l{font-family:"DM Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,238,226,.7);margin-top:3px}
+
+.detail-body{padding:clamp(60px,8vw,100px) 0}
+.detail-grid{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start}
+@media(max-width:900px){.detail-grid{grid-template-columns:1fr}}
+.overview p{font-size:1.12rem;color:#39463c}
+.dates-strip{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 30px}
+.date-pill{font-family:"DM Mono",monospace;font-size:.78rem;background:var(--surface);border:1px solid var(--line);
+  padding:8px 14px;border-radius:100px;color:var(--verde);font-weight:500}
+
+/* timeline / field-log */
+.timeline{margin-top:14px;border-left:2px solid var(--line);padding-left:0}
+.day{position:relative;padding:0 0 38px 38px}
+.day::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--oro);border:2px solid var(--lienzo);box-shadow:0 0 0 2px var(--oro)}
+.day:last-child{padding-bottom:0}
+.day .dnum{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--arcilla);margin-bottom:5px}
+.day h4{font-size:1.32rem;margin-bottom:8px}
+.day p{color:var(--muted);font-size:.97rem;margin-bottom:.6rem}
+.day .stay{font-family:"DM Mono",monospace;font-size:.72rem;color:var(--verde);letter-spacing:.04em;display:inline-block;background:rgba(35,92,63,.08);padding:5px 11px;border-radius:7px;margin-top:4px}
+.day .stay b{color:var(--selva);font-weight:500}
+
+/* sidebar */
+.sticky-card{position:sticky;top:96px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow)}
+.sticky-card .price-big{font-family:"Fraunces";font-size:2.6rem;color:var(--selva);line-height:1}
+.sticky-card .price-lbl{font-family:"DM Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.sticky-card .dep{font-size:.86rem;color:var(--muted);margin:-6px 0 18px}
+.incl{list-style:none;margin:0 0 22px;padding:18px 0 0;border-top:1px solid var(--line)}
+.incl li{position:relative;padding-left:26px;margin-bottom:10px;font-size:.92rem;color:#39463c}
+.incl li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:8px;border-left:2px solid var(--verde);border-bottom:2px solid var(--verde);transform:rotate(-45deg)}
+.sticky-card .btn{width:100%;justify-content:center;margin-bottom:10px}
+
+.addon{background:rgba(196,85,43,.07);border:1px solid rgba(196,85,43,.25);border-radius:16px;padding:26px 28px;margin-top:40px}
+.addon .eyebrow{color:var(--arcilla)}
+.policy{margin-top:46px;border-top:1px solid var(--line);padding-top:30px}
+.policy h4{font-family:"Hanken Grotesk";font-weight:700;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--selva);margin-bottom:8px}
+.policy p,.policy li{font-size:.88rem;color:var(--muted)}
+.policy ul{padding-left:18px;margin:0 0 14px}
+.note{background:rgba(230,160,44,.12);border-radius:12px;padding:16px 20px;font-size:.9rem;color:#5a4a1f;margin-top:18px}
+
+/* ---------- about page ---------- */
+.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px}
+.bio-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:var(--shadow)}
+.bio-card .mono-av{width:60px;height:60px;font-size:1.5rem;margin-bottom:20px}
+.bio-card h3{font-size:1.7rem;margin-bottom:4px}
+.bio-card .role{font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--arcilla);margin-bottom:16px}
+.bio-card p{color:var(--muted);font-size:.97rem}
+.bio-card .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.bio-card .tags span{font-size:.76rem;font-family:"DM Mono",monospace;background:rgba(35,92,63,.08);color:var(--verde);padding:5px 11px;border-radius:100px}
+
+/* ---------- faq ---------- */
+.faq-wrap{max-width:820px;margin:48px auto 0}
+.faq{border-bottom:1px solid var(--line)}
+.faq button{width:100%;background:none;border:0;text-align:left;padding:24px 0;display:flex;justify-content:space-between;gap:20px;
+  align-items:center;cursor:pointer;font-family:"Fraunces";font-size:1.25rem;color:var(--selva);font-weight:500}
+.faq .ic{flex-shrink:0;width:26px;height:26px;position:relative}
+.faq .ic::before,.faq .ic::after{content:"";position:absolute;background:var(--arcilla);transition:.3s;top:50%;left:50%}
+.faq .ic::before{width:14px;height:2px;transform:translate(-50%,-50%)}
+.faq .ic::after{width:2px;height:14px;transform:translate(-50%,-50%)}
+.faq.open .ic::after{transform:translate(-50%,-50%) scaleY(0)}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq .ans p{color:var(--muted);padding-bottom:24px;margin:0;font-size:1rem}
+.faq.open .ans p{padding-bottom:24px}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:start;margin-top:30px}
+.contact-cards{display:flex;flex-direction:column;gap:14px}
+.cc{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.cc:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.cc .ci{width:42px;height:42px;border-radius:12px;background:var(--verde);display:grid;place-items:center;flex-shrink:0}
+.cc .ci svg{width:20px;height:20px}
+.cc .cl{font-family:"DM Mono",monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cc .cv{font-weight:600;font-size:1.05rem;color:var(--selva)}
+.contact-side{background:var(--selva);color:var(--lienzo);border-radius:20px;padding:clamp(32px,4vw,44px)}
+.contact-side h3{color:var(--lienzo);font-size:1.7rem;margin-bottom:14px}
+.contact-side p{color:rgba(244,238,226,.82);font-size:.97rem}
+.contact-side .btn{margin-top:8px}
+.travel-info{margin-top:60px;border-top:1px solid var(--line);padding-top:40px}
+.ti-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:24px}
+.ti-grid h4{font-family:"Hanken Grotesk";font-weight:700;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--arcilla);margin-bottom:12px}
+.ti-grid ul{padding-left:18px;color:var(--muted);font-size:.95rem;margin:0}
+.ti-grid li{margin-bottom:6px}
+
+/* ---------- footer ---------- */
+footer{background:var(--selva);color:rgba(244,238,226,.7);padding:70px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:46px;border-bottom:1px solid rgba(244,238,226,.14)}
+footer .brand .bname{color:var(--lienzo)}
+footer h5{font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-soft);margin:0 0 16px;font-weight:500}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:10px}
+footer a{text-decoration:none;cursor:pointer;font-size:.94rem;transition:color .2s}
+footer a:hover{color:var(--lienzo)}
+.foot-blurb{font-size:.95rem;max-width:34ch;margin-top:18px}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:26px;font-size:.82rem;font-family:"DM Mono",monospace;letter-spacing:.04em}
+.foot-ig{display:inline-flex;align-items:center;gap:7px}
+.foot-ig svg{width:15px;height:15px;flex-shrink:0}
+
+
+/* gallery mosaic */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:248px;gap:14px;margin-top:56px}
+.gallery figure{margin:0;border-radius:16px;overflow:hidden;background:var(--verde-deep);position:relative}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(19,35,26,.28));opacity:0;transition:opacity .4s}
+.gallery figure:hover::after{opacity:1}
+@media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:178px}}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .value-grid{grid-template-columns:1fr 1fr}
+  .tours-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  body{font-size:16px}
+  .menu-btn{display:flex}
+  .navlinks{position:fixed;inset:0 0 auto 0;top:0;background:var(--selva);flex-direction:column;align-items:flex-start;gap:6px;
+    padding:96px 32px 32px;transform:translateY(-100%);transition:transform .4s ease;height:auto;box-shadow:var(--shadow)}
+  .navlinks.open{transform:translateY(0)}
+  .navlinks a{color:var(--lienzo);font-size:1.25rem;font-family:"Fraunces";padding:10px 0;width:100%;border-bottom:1px solid rgba(244,238,226,.1)}
+  .nav-cta .btn{display:none}
+  .lead-row,.split,.contact-grid,.bio-grid,.tours-grid,.value-grid,.ti-grid{grid-template-columns:1fr}
+  .split-img{aspect-ratio:4/3;order:-1}
+  .hero-meta div{padding:0 22px 0 0;margin:0 22px 14px 0}
+  .facts-stats div{padding:6px 18px 6px 0;border:0}
+  .foot-top{grid-template-columns:1fr;gap:30px}
+  .founders{flex-direction:column;gap:14px}
+}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.page{animation:none}}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px;border-radius:4px}
+.video-cover{position:relative}
+.video-cover video{cursor:pointer}
+.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;
+  background:rgba(244,238,226,.16);backdrop-filter:blur(3px);border:1.5px solid rgba(244,238,226,.55);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .2s,transform .2s}
+.video-play svg{width:20px;height:20px;fill:var(--lienzo);margin-left:3px}
+.video-play:hover{transform:translate(-50%,-50%) scale(1.06)}
+.video-cover.playing .video-play{opacity:0;pointer-events:none}
+.video-cover::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%, rgba(19,35,26,.22) 0%, rgba(19,35,26,0) 46%);
+  opacity:1;transition:opacity .2s}
+.video-cover.playing::before{opacity:0}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" data-page="home" aria-label="Wild Wander Tours home">
+      <img class="logo" src="images/img-02-d48198870332.png" alt="Wild Wander Tours logo">
+      <span><span class="bname">Wild Wander</span><span class="btag">Colombia · Est. 2025</span></span>
+    </a>
+    <nav>
+      <ul class="navlinks" id="navlinks">
+        <li><a data-page="home">Home</a></li>
+        <li><a data-page="tours">Tours</a></li>
+        <li><a data-page="spanish">Spanish Practice</a></li>
+        <li><a data-page="about">About</a></li>
+        <li><a data-page="faq">FAQ</a></li>
+        <li><a data-page="contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-gold" data-page="tours">Book a tour</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================= HOME ============================================================= -->
+<section class="page active" id="page-home">
+
+  <div class="hero">
+    <div class="hero-img">
+      <video id="heroVideo" autoplay muted loop playsinline poster="images/img-03-045979520bae.jpg">
+        <source src="videos/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-inner">
+      <div class="wrap">
+        <p class="eyebrow">Small-group cultural &amp; adventure travel</p>
+        <h1>Explore the abundance and <em>vibrancy</em> of Colombia</h1>
+        <p class="lede">Hand-built journeys through the cloud-forest towns of Antioquia, the wild Pacific coast, and the desert edge of South America — guided by two friends who never stopped coming back.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" data-page="tours">Explore the tours <span class="arr">→</span></a>
+          <a class="btn btn-ghost" data-page="about">Meet your guides</a>
+        </div>
+        <div class="hero-meta">
+          <div><div class="n">3</div><div class="l">Signature routes</div></div>
+          <div><div class="n">10</div><div class="l">Travellers max</div></div>
+          <div><div class="n">100%</div><div class="l">Direct-to-guide</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- difference -->
+  <div class="section values">
+    <div class="wrap">
+      <div class="lead-row">
+        <div>
+          <p class="eyebrow">Why travel with us</p>
+          <h2>Refined comfort,<br>real adventure.</h2>
+        </div>
+        <p class="sub">We design trips that feel safe and well-looked-after without ever feeling staged. Five-star hotels and private villas one day; a Wayuú ranchería, a jungle waterfall, or a tandem paraglider the next — at whatever pace suits the group.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="vnum">01</div>
+          <h3>Genuinely small groups</h3>
+          <p>Ten travellers at most. Everyone gets a real seat at the table, their own bed, and a guide who knows their name.</p>
+        </div>
+        <div class="value-card">
+          <div class="vnum">02</div>
+          <h3>Rooted in the place</h3>
+          <p>Coffee and cocoa farms, family kitchens, indigenous communities — time with the people who make Colombia what it is.</p>
+        </div>
+        <div class="value-card">
+          <div class="vnum">03</div>
+          <h3>Adventure, dialled to you</h3>
+          <p>Paragliding, whale-watching, jungle treks and sandboarding are on offer — never an obligation. You set the intensity.</p>
+        </div>
+        <div class="value-card">
+          <div class="vnum">04</div>
+          <h3>Looked after, always</h3>
+          <p>Private transport throughout and founders trained as a Wilderness First Responder and a licensed EMT.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- featured tours -->
+  <div class="section">
+    <div class="wrap">
+      <div class="lead-row">
+        <div>
+          <p class="eyebrow">The journeys</p>
+          <h2>Three ways to<br>wander Colombia.</h2>
+        </div>
+        <p class="sub">Each route runs on set dates through 2026, or as a private departure on dates of your own. Tap any journey for the full day-by-day.</p>
+      </div>
+      <div class="tours-grid" id="homeTours"></div>
+    </div>
+  </div>
+
+  <!-- about teaser -->
+  <div class="section tight">
+    <div class="wrap split">
+      <div class="split-img">
+        <img src="images/img-04-591b2422da7f.jpg" alt="Wax palms in a Colombian valley">
+      </div>
+      <div>
+        <p class="eyebrow">Two friends, one country</p>
+        <h2>They kept coming back.</h2>
+        <p class="sub">Madison and Riley are best friends who first came to Colombia to travel — and kept finding their way back, pulled in by the culture, the landscapes, and the people. In 2025 they turned that pull into Wild Wander Tours, built to share the country the way they came to know it: slowly, locally, and with a lot of heart.</p>
+        <div class="founders">
+          <div class="founder"><img class="av" src="images/img-05-7b47cb8fa39f.jpg" alt="Riley Ferré"><div><div class="fn">Riley Ferré</div><div class="fr">Guide · WFR</div></div></div>
+          <div class="founder"><img class="av" src="images/img-06-e07d36e6311b.jpg" alt="Madison Gorsh"><div><div class="fn">Madison Gorsh</div><div class="fr">Guide · EMT</div></div></div>
+        </div>
+        <p style="margin-top:26px"><a class="btn btn-line" data-page="about">Read their story <span class="arr">→</span></a></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- moments mosaic -->
+  <div class="section tight">
+    <div class="wrap">
+      <div class="lead-row">
+        <div><p class="eyebrow">Moments from the road</p><h2>A country that<br>refuses to be dull.</h2></div>
+        <p class="sub">Colour, coffee, cobblestones, and a tandem flight or two — a glimpse of what a week with us actually looks like.</p>
+      </div>
+      <div class="gallery">
+        <figure><img alt="Colourful umbrella-lined street in Antioquia" src="images/img-07-119cf28918fe.jpg"></figure>
+        <figure><img alt="Freshly poured Colombian coffee" src="images/img-08-82e64f8151d8.jpg"></figure>
+        <figure><img alt="Horseback riding through the green hills" src="images/img-09-7836e28bb596.jpg"></figure>
+        <figure><img alt="Bougainvillea against a village wall" src="images/img-10-55f14520cfe7.jpg"></figure>
+        <figure><img alt="Towering wax palm on a mountainside" src="images/img-11-2d21e85e0df7.jpg"></figure>
+        <figure><img alt="The pink cathedral of Jericó" src="images/img-12-1f022b161c67.jpg"></figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA band -->
+  <div class="section tight">
+    <div class="wrap">
+      <div class="band">
+        <div class="band-img" style="background-image:url('images/img-13-6692cb1619f8.jpg')"></div>
+        <div class="band-inner">
+          <p class="eyebrow">Travelling on your own schedule?</p>
+          <h2>Build a private departure for your group.</h2>
+          <p>Pick your dates, your pace, and your people. Private trips run for groups of three or more — tell us what you have in mind and we'll see what we can make work.</p>
+          <p style="margin-top:8px"><a class="btn btn-gold" href="https://tally.so/r/KYNqXg" target="_blank" rel="noopener">Request custom dates <span class="arr">→</span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= TOURS LIST ============================================================= -->
+<section class="page" id="page-tours">
+  <div class="hero" style="min-height:60svh">
+    <div class="hero-img" style="background-image:url('images/img-14-6d4c6a3dcbd8.jpg')"></div>
+    <div class="hero-inner">
+      <div class="wrap">
+        <p class="eyebrow">The journeys</p>
+        <h1>Our tours</h1>
+        <p class="lede">Three signature routes across Colombia — from luxury and colonial charm to remote, off-grid coastline.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="tours-grid" id="allTours" style="margin-top:0"></div>
+
+      <div class="band" style="margin-top:72px">
+        <div class="band-inner">
+          <p class="eyebrow">None of the dates fit?</p>
+          <h2>Request a private departure.</h2>
+          <p>Tell us your preferred window and group size — minimum three travellers — and we'll let you know what we can arrange.</p>
+          <p style="margin-top:8px"><a class="btn btn-gold" href="https://tally.so/r/KYNqXg" target="_blank" rel="noopener">Custom dates form <span class="arr">→</span></a></p>
+        </div>
+      </div>
+
+      <div class="travel-info">
+        <p class="eyebrow">Getting there</p>
+        <div class="ti-grid">
+          <div>
+            <h4>Direct flights to Medellín</h4>
+            <ul><li>American Airlines</li><li>United Airlines</li><li>Spirit Airlines</li><li>Avianca</li><li>JetBlue</li></ul>
+          </div>
+          <div>
+            <h4>Entry requirements</h4>
+            <ul>
+              <li>A valid passport</li>
+              <li>The Check-MIG form, completed between 72 hours and 1 hour before departure</li>
+            </ul>
+            <p style="margin-top:16px"><a class="btn btn-line" href="https://apps.migracioncolombia.gov.co/pre-registro/en" target="_blank" rel="noopener">Colombia Check-MIG form <span class="arr">→</span></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= SPANISH PRACTICE ============================================================= -->
+<section class="page" id="page-spanish">
+  <div class="hero" style="min-height:56svh">
+    <div class="hero-img" style="background-image:url('images/img-08-82e64f8151d8.jpg')"></div>
+    <div class="hero-inner">
+      <div class="wrap">
+        <p class="eyebrow">Prep for the trip</p>
+        <h1>Practice your Spanish.</h1>
+        <p class="lede">Weekly video calls to sharpen real conversational Spanish — for travellers who already have some Spanish and want to build the confidence to actually speak it in Colombia.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-bottom:0">
+    <div class="wrap">
+      <div style="max-width:720px;margin:0 auto;text-align:center">
+        <p class="eyebrow center">Hear it from Riley</p>
+        <h2>"I want to speak Spanish with you."</h2>
+        <div class="video-cover" id="spanishVideoCover" style="margin-top:32px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:var(--verde-deep)">
+          <video id="spanishVideo" controls poster="images/spanish-video-cover.jpg" style="width:100%;display:block">
+            <source src="videos/spanish-intro.mp4" type="video/mp4">
+          </video>
+          <div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section values">
+    <div class="wrap">
+      <div class="lead-row">
+        <div><p class="eyebrow">What it is</p><h2>Conversation practice,<br>not a classroom.</h2></div>
+        <p class="sub">This is for travellers who already have a working base in Spanish — from school, an app, or past trips — and want to actually use it. Relaxed, one-on-one video calls focused on real spoken Spanish: ordering food, asking for directions, chatting with your driver, haggling at a market. Not a beginner course, not grammar from scratch — just practice, with someone fluent who knows exactly what comes up on a trip through Colombia.</p>
+      </div>
+
+      <p class="eyebrow" style="margin-top:60px">Why it's worth it</p>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="vnum">01</div>
+          <h3>Real travel Spanish</h3>
+          <p>Colloquial Colombian slang and local expressions — the words guides, hosts, and locals actually use, not textbook dialogue you'll never hear.</p>
+        </div>
+        <div class="value-card">
+          <div class="vnum">02</div>
+          <h3>Low-pressure practice</h3>
+          <p>No classroom, no grading — just real conversation, sharpening the Spanish you already have.</p>
+        </div>
+        <div class="value-card">
+          <div class="vnum">03</div>
+          <h3>From someone who lives it</h3>
+          <p>Practice with someone fluent, speaking Spanish day to day while living in Colombia.</p>
+        </div>
+        <div class="value-card">
+          <div class="vnum">04</div>
+          <h3>Built around your trip</h3>
+          <p>Sessions timed to your departure and focused on what you'll actually need for your itinerary.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div style="max-width:460px;margin:0 auto;text-align:center">
+        <p class="eyebrow center">Pricing</p>
+        <h2>One simple package.</h2>
+        <p class="sub" style="margin:10px auto 0">Sold as a bundle only — no single sessions.</p>
+
+        <div class="sticky-card" style="position:static;text-align:left;margin-top:32px">
+          <div class="price-lbl">Practice bundle</div>
+          <div class="price-big">$149</div>
+          <p class="dep">4 sessions · 45 minutes each</p>
+          <ul class="incl">
+            <li>Four one-on-one video calls</li>
+            <li>Scheduled around your trip dates</li>
+            <li>Real conversational Spanish, not grammar drills</li>
+          </ul>
+          <a class="btn btn-gold" href="https://book.stripe.com/bJe00i5Mx3WEbEe57igUM08" target="_blank" rel="noopener" style="width:100%;justify-content:center">Book now <span class="arr">→</span></a>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:14px;text-align:center">You'll list a few dates that work for you as part of checkout.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= TOUR DETAILS (generated) ============================================================= -->
+<section class="page" id="page-antioquia"></section>
+<section class="page" id="page-citysea"></section>
+<section class="page" id="page-guajira"></section>
+
+<!-- ============================================================= ABOUT ============================================================= -->
+<section class="page" id="page-about">
+  <div class="hero" style="min-height:62svh">
+    <div class="hero-img" style="background-image:url('images/img-15-380430409b62.jpg')"></div>
+    <div class="hero-inner">
+      <div class="wrap">
+        <p class="eyebrow">About Wild Wander Tours</p>
+        <h1>Best friends who<br>couldn't stay away.</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="lead-row">
+        <div><p class="eyebrow">The story</p><h2>How it began</h2></div>
+        <p class="sub">Madison Gorsh and Riley Ferré are two best friends who met through their love of paragliding. Both spent years in Colombia, falling for the vibrant culture, the abundant nature, and the generous people. In 2025, that passion became Wild Wander Tours.</p>
+      </div>
+
+      <div class="band" style="margin-top:60px;background:var(--verde)">
+        <div class="band-inner" style="max-width:70ch">
+          <p class="eyebrow">Our mission</p>
+          <h2>Safe, interactive tours built on cross-cultural exchange, respect for nature, and the kind of adventure you only find by immersing yourself in a new place.</h2>
+        </div>
+      </div>
+
+      <p class="eyebrow" style="margin-top:70px">Your guides</p>
+      <div class="bio-grid">
+        <div class="bio-card">
+          <img class="av" src="images/img-05-7b47cb8fa39f.jpg" alt="Riley Ferré">
+          <h3>Riley Ferré</h3>
+          <div class="role">Oregon → Colombia</div>
+          <p>Riley has lived in Colombia for the past three years, working as a cross-country paragliding tour guide and exploring every corner of the country's diversity. Colombia has become a second home, and she loves sharing its magic. She speaks fluent Spanish and is trained as a Wilderness First Responder.</p>
+          <div class="tags"><span>Fluent Spanish</span><span>Wilderness First Responder</span><span>Paragliding guide</span></div>
+        </div>
+        <div class="bio-card">
+          <img class="av" src="images/img-06-e07d36e6311b.jpg" alt="Madison Gorsh">
+          <h3>Madison Gorsh</h3>
+          <p>Madison has been travelling to Colombia for three years and stays captivated by its natural and cultural abundance. She's a civil engineer, snowboarder, rock-climber, and paraglider pilot, and she holds her EMT license — so the logistics are handled and so is the first-aid kit.</p>
+          <div class="tags"><span>Licensed EMT</span><span>Civil engineer</span><span>Climber &amp; pilot</span></div>
+        </div>
+      </div>
+
+      <div class="band" style="margin-top:64px">
+        <div class="band-inner">
+          <p class="eyebrow">Ready when you are</p>
+          <h2>Come wander with us.</h2>
+          <p>Have a look at the journeys, or send us a note with any question at all.</p>
+          <p style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-gold" data-page="tours">See the tours <span class="arr">→</span></a>
+            <a class="btn btn-ghost" data-page="contact">Get in touch</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= FAQ ============================================================= -->
+<section class="page" id="page-faq">
+  <div class="section" style="padding-top:clamp(130px,18vh,200px)">
+    <div class="wrap">
+      <div style="text-align:center;max-width:620px;margin:0 auto">
+        <p class="eyebrow center">Good to know</p>
+        <h2 style="font-size:clamp(2.2rem,5vw,3.6rem)">Frequently asked questions</h2>
+        <p class="sub" style="margin:14px auto 0">Everything travellers ask before they commit. Still wondering about something? We're a message away.</p>
+      </div>
+      <div class="faq-wrap" id="faqList"></div>
+      <div style="text-align:center;margin-top:46px">
+        <a class="btn btn-dark" data-page="contact">Ask us anything <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= CONTACT ============================================================= -->
+<section class="page" id="page-contact">
+  <div class="section" style="padding-top:clamp(130px,18vh,200px)">
+    <div class="wrap">
+      <div class="lead-row">
+        <div><p class="eyebrow">Contact us</p><h2>Let's plan<br>your wander.</h2></div>
+        <p class="sub">Email or message us on WhatsApp with any question or request — flights, fitness levels, custom dates, dietary needs, anything. We'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-cards">
+          <a class="cc" href="mailto:info@wildwandertours.com">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#F4EEE2" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span><span class="cl">Email</span><br><span class="cv">info@wildwandertours.com</span></span>
+          </a>
+          <a class="cc" href="https://wa.me/15415548257" target="_blank" rel="noopener">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#F4EEE2" stroke-width="1.8"><path d="M3 21l1.6-4.5A8.5 8.5 0 1 1 7.5 19.4L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5"/></svg></span>
+            <span><span class="cl">WhatsApp</span><br><span class="cv">+1 (541) 554 8257</span></span>
+          </a>
+          <a class="cc" href="https://www.instagram.com/wildwandertours" target="_blank" rel="noopener">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#F4EEE2" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#F4EEE2" stroke="none"/></svg></span>
+            <span><span class="cl">Instagram</span><br><span class="cv">@wildwandertours</span></span>
+          </a>
+        </div>
+
+        <div class="contact-side">
+          <h3>Want different dates?</h3>
+          <p>If our scheduled departures don't line up, request a private trip and we'll see what we can arrange. Private departures run for groups of three or more.</p>
+          <a class="btn btn-gold" href="https://tally.so/r/KYNqXg" target="_blank" rel="noopener">Custom dates form <span class="arr">→</span></a>
+          <p style="margin-top:26px;font-size:.88rem;color:rgba(244,238,226,.6)">Ready to book a scheduled tour instead? Open any tour and use <b style="color:var(--oro-soft)">Book &amp; pay</b>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" data-page="home" style="margin-bottom:4px">
+          <img class="logo" src="images/img-02-d48198870332.png" alt="Wild Wander Tours logo">
+          <span><span class="bname">Wild Wander</span><span class="btag">Colombia · Est. 2025</span></span>
+        </a>
+        <p class="foot-blurb">Small-group cultural and adventure travel across Colombia, led by guides who call it home.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a data-page="tours">All tours</a></li>
+          <li><a data-page="antioquia">Antioquia Tour</a></li>
+          <li><a data-page="citysea">City to Sea Tour</a></li>
+          <li><a data-page="guajira">La Guajira Tour</a></li>
+          <li><a data-page="spanish">Spanish practice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a data-page="about">About us</a></li>
+          <li><a data-page="faq">FAQ</a></li>
+          <li><a data-page="contact">Contact</a></li>
+          <li><a href="mailto:info@wildwandertours.com">info@wildwandertours.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Wild Wander Tours</span>
+      <span>WhatsApp +1 (541) 554 8257</span>
+      <a class="foot-ig" href="https://www.instagram.com/wildwandertours" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@wildwandertours</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CUSTOM ITINERARY MODAL ============ -->
+<div class="modal-overlay" id="customModalOverlay">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="customModalTitle">
+    <button type="button" class="modal-close" id="customModalClose" aria-label="Close">&times;</button>
+    <p class="eyebrow">Design with us</p>
+    <h2 id="customModalTitle">Let's design something together.</h2>
+    <p class="sub">You don't need a finished plan — tell us as much or as little as you know, and we'll help shape the rest. Fill this in and it'll open a pre-filled email in your own mail app addressed to us.</p>
+    <form id="customItineraryForm">
+      <label class="modal-field"><span>Your name</span><input type="text" name="name" required></label>
+      <label class="modal-field"><span>Email</span><input type="email" name="email" required></label>
+      <label class="modal-field"><span>Group size</span><input type="text" name="groupSize" placeholder="e.g. 4 people"></label>
+      <label class="modal-field"><span>Rough dates / timeframe</span><input type="text" name="dates" placeholder="e.g. late June 2027, ~10 days"></label>
+      <label class="modal-field"><span>What sounds good to you?</span><textarea name="idea" rows="5" required placeholder="Interests, pace, who's coming, places you're curious about — anything helps, even just a rough feeling for the trip."></textarea></label>
+      <button type="submit" class="btn btn-gold">Send request <span class="arr">→</span></button>
+      <p class="modal-note">This opens your email app with the details filled in and addressed to info@wildwandertours.com.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const TOURS = {
+  antioquia:{
+    name:"Antioquia Tour", route:"Medellín · Jericó · Santa Fe de Antioquia",
+    img:"images/img-16-d4540a0d7f02.jpg",
+    tag:"Mountains & towns", duration:"9 days · 8 nights", days:"9", nights:"8",
+    group:"Max 10", price:"3,250", level:"Luxury",
+    blurb:"Begin in the vibrant elegance of Medellín, then slip away to the colourful colonial towns of Jericó and Santa Fe de Antioquia — colonial charm meets timeless calm.",
+    dates:["Mar 30 – Apr 7, 2027","Sep 30 – Oct 8, 2027"],
+    book:"https://tally.so/r/WOkv7R?tour=Antioquia%20Tour",
+    overview:"Visit the luscious mountains and charming towns of Antioquia. Begin your journey in the vibrant elegance of Medellín before escaping to the picturesque towns of Jericó and Santa Fe de Antioquia, where colourful colonial charm meets timeless tranquillity — an exclusive experience showcasing the finest of the Antioquia region.",
+    facts:[["9","Days"],["8","Nights"],["Max 10","Group size"],["5★","Hotels & villas"]],
+    incl:["Private transportation","Personal guides throughout","Daily breakfast + welcome & finale dinners","All lodging","Local SIM card on arrival","Entrance fees to included activities"],
+    itin:[
+      ["Day 01","Welcome to Medellín","Land at José María Córdova International Airport and be whisked by private transport to a luxurious five-star hotel in the heart of the city. After settling in, we ease into the evening with a gourmet welcome dinner at Alambique in the famous El Poblado neighbourhood.","5-star hotel, central Medellín","Welcome dinner"],
+      ["Day 02","Medellín city tour","After a relaxed breakfast, a vibrant city tour: Botero Plaza and the botanical garden, a traditional lunch, then a guided walk through Comuna 13 — known for its complex history and striking street art. Time permitting, the Museum of Modern Art, before dinner at one of Medellín's exceptional restaurants. A comfortable mix of light walking and private transport.","5-star hotel, Medellín","Breakfast"],
+      ["Day 03","Tour de Oriente","An early breakfast, then a 9 a.m. departure by private transport to the charming towns just outside the city — El Retiro, La Ceja, San Antonio de Pereira (famous for its plaza of unique desserts), and El Carmen de Viboral. Local architecture, art, and cuisine, with lunch in one of the towns.","5-star hotel, Medellín","Breakfast"],
+      ["Day 04","Off to the mountains: Jericó","After breakfast, the stunning three-hour drive to Jericó — scenery straight out of a Jurassic Park film. Settle into our private villa, then lunch at Ecoland, a paragliding launch site with a gourmet restaurant (tandem flights can be booked). An easy afternoon among the botanical garden and cobblestone streets.","Private Villa, Jericó","Breakfast"],
+      ["Day 05","Jericó: hiking & coffee","A home-cooked breakfast of fresh local fruit, then a relaxed 2–3 hour hike with sweeping views (adjustable to the group's energy). After a hearty Colombian lunch in town, a guided coffee-farm tour reveals the craft behind every cup — and likely a tasting.","Private Villa, Jericó","Breakfast"],
+      ["Day 06","Jericó → Santa Fe de Antioquia","A final Jericó breakfast among birdsong, then to the launch for anyone who wishes to fly. The two-hour drive to Santa Fe de Antioquia — founded in 1541, all cobblestones and colonial architecture — with lunch en route. We stay at Hotel Tonusco Campestre, with pool, bar, and restaurant.","Hotel Tonusco Campestre","Breakfast"],
+      ["Day 07","Explore Santa Fe de Antioquia","A leisurely morning, then a guided cocoa-farm tour in nearby Sopetrán, led by the family who runs it — an in-depth look at fine chocolate, with lunch included. The afternoon is yours to stroll the town or relax at the hotel.","Hotel Tonusco Campestre","Breakfast & lunch"],
+      ["Day 08","Santa Fe → Medellín finale","Visit the Puente Colgante de Occidente, a historic suspension bridge once the longest of its kind in South America. The scenic return along the historic highway, past mountain towns and waterfalls, with lunch at one of the highest points. Back to Medellín for a festive finale dinner at Mamacita — and salsa dancing next door for anyone keen.","5-star hotel, Medellín","Breakfast & finale dinner"],
+      ["Day 09","Time to return home","Private transport to the airport, timed to your flight. Thank you for such a fun tour!","","Breakfast"]
+    ]
+  },
+  citysea:{
+    name:"City to Sea Tour", route:"Medellín · Pacific Coast (Nuquí)",
+    img:"images/img-17-b29947041b05.jpg",
+    tag:"Jungle & whales", duration:"8 days · 7 nights", days:"8", nights:"7",
+    group:"Small group", price:"4,000", level:"Adventure",
+    blurb:"Start in lively Medellín, then fly to Nuquí on the Pacific coast and boat 45 minutes to a jungle eco-lodge ringed by waterfalls. Hike the rainforest, swim natural pools, and watch the humpback whales migrate.",
+    dates:["Sep 18 – 25, 2027"],
+    book:"https://tally.so/r/WOkv7R?tour=City%20to%20Sea%20Tour",
+    overview:"Experience the beauty and culture of Colombia's Pacific Coast. Start in vibrant Medellín — dance, eat, and explore its complex history — then fly to Nuquí and take a 45-minute boat ride to our jungle hotel, surrounded by waterfalls and quiet beaches. From this base we hike rainforest, swim natural pools, enjoy traditional meals, and witness migrating humpback whales.",
+    facts:[["8","Days"],["7","Nights"],["Pacific","Coast of Chocó"],["+ Jericó","Optional add-on"]],
+    incl:["Private transportation","Personal guides throughout","Daily breakfast + welcome & finale dinners","Breakfast, lunch & dinner at Madreagua Ecohotel","All lodging","Local SIM card on arrival","Entrance fees to included activities"],
+    itin:[
+      ["Day 01","Welcome to Medellín","An air-conditioned van meets you at José María Córdova International Airport for the drive to your five-star hotel. After settling in, a welcome dinner at Mamacita — a cosy yet upscale spot with a gourmet take on Colombian classics — sets the tone for the trip.","5-star hotel, central Medellín","Welcome dinner"],
+      ["Day 02","The heart of Antioquia","A 9 a.m. departure for the Tour de Oriente, exploring the traditional towns around Medellín: colonial El Retiro, mountain-framed La Ceja, San Antonio de Pereira for its famous desserts, and El Carmen de Viboral for its artisanal ceramics. Lunch in one of the towns; the evening at leisure.","5-star hotel, Medellín","Breakfast"],
+      ["Day 03","Into the jungle: Nuquí","An early breakfast, then a scenic flight to Nuquí on the Pacific coast, followed by a 45-minute private boat ride up the Arusí River, through mangroves, to the Madreagua eco-lodge. A traditional welcome lunch, time to unwind, and a leisurely afternoon trek along the river to spot wildlife and birds.","Madreagua Eco-Lodge, Nuquí","Breakfast, lunch & dinner"],
+      ["Day 04","Whales & paddleboarding","On laid-back Colombian time, head out for a guided whale-watching tour — the waters around Nuquí host humpbacks in migration season. Back for lunch and downtime, then an optional sunset paddleboarding session on the calm Pacific.","Madreagua Eco-Lodge","Breakfast, lunch & dinner"],
+      ["Day 05","Jungle & a virgin beach","The day is yours — another whale tour, or a guided 6-hour jungle walk deep into the rainforest with an experienced guide, breaking for a packed lunch on a secluded, rarely-visited beach. Return for well-earned relaxation.","Madreagua Eco-Lodge","Breakfast, packed lunch & dinner"],
+      ["Day 06","Underwater exploration","A snorkelling lesson with an expert instructor — tailored to all levels — to safely explore the reefs and marine life. A leisurely lunch, then an optional second session or time to simply soak in the surroundings.","Madreagua Eco-Lodge","Breakfast, lunch & dinner"],
+      ["Day 07","Waterfalls & last day on the Pacific","A late breakfast, then a 3-hour trek to Las Peñas, one of the region's most beautiful waterfalls, through jungle and along the coast. Swim, cool off, and picnic in nature before a final celebratory dinner at the lodge.","Madreagua Eco-Lodge","Breakfast, packed lunch & dinner"],
+      ["Day 08","Departure from Nuquí","One last relaxed breakfast, then the flight back to Medellín, with help arranging any onward connections home.","","Breakfast"]
+    ],
+    addon:{
+      title:"Jericó add-on", price:"$850 / person", days:"3 extra nights",
+      text:"After the Pacific, extend the journey with three nights in Jericó — one of Antioquia's most picturesque towns. Includes private transport, accommodation, fresh daily breakfast, a finale dinner, and entrance fees to included tours.",
+      itin:[
+        ["Day 08","Nuquí → Medellín → Jericó","Morning flight to Medellín, then a scenic 2.5-hour drive through the Andes to Jericó. Settle into a private villa; evening at leisure with dinner at a local restaurant of the group's choosing."],
+        ["Day 09","Nature, coffee & culture","Home-cooked breakfast, a guided 2–3 hour trek along El Sendero de las Nubes, lunch in town, and an afternoon coffee-farm visit — bean to brew. Dinner at the villa or in town."],
+        ["Day 10","Adventure & artisans → Medellín","Optional tandem paragliding over the Andean landscape, a visit to a traditional Carriel leather workshop, lunch in town, then the transfer back to Medellín and a farewell finale dinner."],
+        ["Day 11","Departure","Private transport to the airport for international return flights."]
+      ]
+    }
+  },
+  guajira:{
+    name:"La Guajira Tour", route:"Atlantic Coast · Palomino to Punta Gallinas",
+    img:"images/img-18-da20e431ed67.jpg",
+    tag:"Desert & Caribbean", duration:"9 days · 8 nights", days:"9", nights:"8",
+    group:"Small group", price:"3,250", level:"Off-grid",
+    blurb:"From the northernmost point of South America in the La Guajira desert to the white-sand beaches of Palomino — immersive, relaxing, and unlike anywhere else. A rustic, culturally rich adventure rather than a five-star trip.",
+    dates:["Mar 21 – 29, 2027"],
+    book:"https://tally.so/r/WOkv7R?tour=La%20Guajira%20Tour",
+    overview:"From the northernmost point of South America in the La Guajira desert to the white-sand beaches of Palomino, this tour is immersive, relaxing, and unique — woven through with Wayuú culture, desert landscapes, and Caribbean coastline.",
+    facts:[["9","Days"],["8","Nights"],["Punta Gallinas","Tip of S. America"],["Wayuú","Cultural immersion"]],
+    incl:["Private transportation","Personal guides throughout","Daily breakfast + welcome & finale dinners","Lunches specified in the itinerary","All lodging","Local SIM card on arrival","Entrance fees to included activities"],
+    itin:[
+      ["Day 01","Welcome to Palomino","A private van meets you at Santa Marta airport for the scenic 1.5-hour drive to Palomino, a laid-back coastal town between mountains and the Caribbean. Check into Dreamer Hostel — pool, beach access, restaurant, bar, even yoga — and gather for a welcome dinner and trip briefing.","Dreamer Hostel, Palomino","Welcome dinner"],
+      ["Day 02","Colombian time in Palomino","A relaxed day on Palomino's coastline, where two rivers meet the ocean. A beach walk, an optional surf lesson, a stroll through the artisan shops and bars, and a sunset happy hour on the sand.","Dreamer Hostel, Palomino","Breakfast"],
+      ["Day 03","Riohacha & Wayuú culture","A short drive to Riohacha, capital of La Guajira, and check-in at Hotel La Vieja Sara. In the afternoon, visit a traditional Wayuú ranchería: a lunch prepared by the community's women, a tasting of locally brewed Chirrinchi, an artisan-craft demonstration, and a cultural conversation translated across Wayuunaiki, Spanish, and English.","Hotel La Vieja Sara, Riohacha","Breakfast & lunch"],
+      ["Day 04","Off-road to Cabo de la Vela","A 4x4 adventure through the desert, past Uribia and the artisan salt flats of Manaure, to remote Cabo de la Vela. A traditional lunch, a swim at El Dorado Beach, a short hike up the spiritual Pilón de Azúcar, and sunset at the lighthouse where desert meets sea.","Ranchería Utta, Cabo de la Vela","Breakfast, lunch & dinner"],
+      ["Day 05","Punta Gallinas — tip of a continent","An early start deeper into the desert to Punta Gallinas, the northernmost point of South America, with stops at Bahía Portete and Bahía Honda. An afternoon among the Taroa dunes — climb, sandboard, or 4-wheel — a picnic lunch, and sunset at the Punta Gallinas lighthouse.","Hospedaje Luzmila, Punta Gallinas","Breakfast, lunch & dinner"],
+      ["Day 06","Return to Riohacha","The drive back through the desert, with a traditional Wayuú-style lunch in Uribia. A free evening in Riohacha to explore, walk the beach, or simply unwind.","Hotel La Vieja Sara, Riohacha","Breakfast & lunch"],
+      ["Day 07","Flamingos & back to Palomino","En route to Palomino, stop in Camarones for a guided flamingo tour in their natural habitat, with a traditional lunch. Back to Dreamer Hostel for an afternoon on the beach.","Dreamer Hostel, Palomino","Breakfast & lunch"],
+      ["Day 08","Tayrona National Park finale","Into Parque Tayrona via the El Zaino entrance for an easy 2-hour jungle hike to Playa del Cabo, passing beautiful beaches along the way. Swim in clear blue water, enjoy a beachfront lunch, then on to Santa Marta for a festive final dinner.","Casa Tunido, Santa Marta","Breakfast & finale dinner"],
+      ["Day 09","Safe travels","After breakfast, private transport to the airport — and unforgettable memories of La Guajira and the Caribbean coast.","","Breakfast"]
+    ],
+    note:"A note on comfort: due to limited infrastructure in La Guajira, this is not a luxury tour. The desert is hot and dry, and some places may not have running water. It's an incredible, culturally immersive adventure — but not a five-star trip."
+  }
+};
+
+const POLICY = {
+  deposit:"A 40% deposit is required to reserve your place.",
+  flights:"You're responsible for your flights to the tour's starting point — email us with any flight or travel questions.",
+  insurance:"Travel insurance is strongly recommended: we suggest a plan covering 100% of trip cost, at least $50,000 in medical evacuation, and $150,000 in emergency assistance and transportation.",
+  cancel:["Cancel 30 days or fewer before the start: no refund.","Cancel 31–60 days before the start: 30% of the trip cost refunded.","Cancellation policy applies once payment is received; trip interruption and cancellation insurance is required."]
+};
+
+const FAQS = [
+  ["Is Colombia safe?","Yes. It's worth acknowledging that Colombia is still a developing country and many people live in poverty — but the people are extremely kind and genuinely want visitors to enjoy their home."],
+  ["Will I have to share a bed?","No. Everyone has their own bed at each location, and couples get private rooms. Depending on the lodging, solo travellers may share a room with at most one other person where appropriate. Bathrooms are ensuite."],
+  ["What are dinner logistics at the private villas?","Easy — we either go out to dinner or pick up groceries and cook a homemade meal at the house, depending on what the group prefers."],
+  ["What's the weather like?","Colombia has a typical tropical climate, averaging about 75–80°F. Rainy seasons usually fall April–June and September–November. The La Guajira desert is hotter and more arid, generally 79–90°F, with low rainfall (May–November can bring refreshing cloud cover)."],
+  ["What if I'm not free on the listed dates?","Fill out the custom-dates form and we'll let you know if we can make something work. A private trip needs a minimum of three people."],
+  ["How does phone service work?","Colombia has surprisingly good coverage — the best carrier is Claro, and we provide SIM cards on arrival to anyone who needs one."],
+  ["What currency is used?","The Colombian Peso (COP), roughly 4,300 COP to $1 (the rate shifts constantly — check Google for the latest). Cash is easy to withdraw from ATMs in cities and towns."]
+];
+
+/* ---------------- RENDER ---------------- */
+function tourCard(id){
+  const t=TOURS[id];
+  return `<article class="tour-card" data-page="${id}">
+    <div class="tc-img" style="background-image:url('${t.img}')"><span class="tc-tag">${t.tag}</span></div>
+    <div class="tc-body">
+      <div class="tc-route">${t.route}</div>
+      <h3>${t.name}</h3>
+      <p>${t.blurb}</p>
+      <div class="tc-foot">
+        <div class="tc-price">$${t.price}<span>per person · ${t.duration}</span></div>
+        <span class="tc-go">View itinerary <span class="arr">→</span></span>
+      </div>
+    </div>
+  </article>`;
+}
+const CUSTOM_CARD = `<article class="tour-card custom-card" id="customItineraryCard">
+    <div class="tc-img custom-img"><span class="tc-tag">Build your own</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#F4EEE2" stroke-width="1.4"><path d="M12 2v20M2 12h20M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+    </div>
+    <div class="tc-body">
+      <div class="tc-route">Anywhere in Colombia · Your dates</div>
+      <h3>Design Something New</h3>
+      <p>Don't have an exact plan yet? Tell us your interests and pace, and we'll design a trip together that doesn't exist on this site yet.</p>
+      <div class="tc-foot">
+        <div class="tc-price">Let's talk<span>tailored to you</span></div>
+        <span class="tc-go">Start the conversation <span class="arr">→</span></span>
+      </div>
+    </div>
+  </article>`;
+document.getElementById('homeTours').innerHTML = Object.keys(TOURS).map(tourCard).join('');
+document.getElementById('allTours').innerHTML = Object.keys(TOURS).map(tourCard).join('') + CUSTOM_CARD;
+document.getElementById('customItineraryCard').addEventListener('click', ()=>openCustomModal());
+
+function dayRow(d){
+  return `<div class="day">
+    <div class="dnum">${d[0]}</div>
+    <h4>${d[1]}</h4>
+    <p>${d[2]}</p>
+    ${d[3]?`<span class="stay">⌂ <b>Stay:</b> ${d[3]}</span> `:''}
+    ${d[4]?`<span class="stay">✦ <b>Meals:</b> ${d[4]}</span>`:''}
+  </div>`;
+}
+
+function buildTour(id){
+  const t=TOURS[id];
+  const facts=t.facts.map(f=>`<div><div class="n">${f[0]}</div><div class="l">${f[1]}</div></div>`).join('');
+  const dates=t.dates.map(d=>`<span class="date-pill">${d}</span>`).join('');
+  const incl=t.incl.map(i=>`<li>${i}</li>`).join('');
+  const itin=t.itin.map(dayRow).join('');
+
+  let addon='';
+  if(t.addon){
+    addon=`<div class="addon">
+      <p class="eyebrow">${t.addon.title} · ${t.addon.price} · ${t.addon.days}</p>
+      <p style="color:var(--muted);font-size:.97rem">${t.addon.text}</p>
+      <div class="timeline" style="margin-top:18px">${t.addon.itin.map(d=>`<div class="day"><div class="dnum">${d[0]}</div><h4 style="font-size:1.15rem">${d[1]}</h4><p>${d[2]}</p></div>`).join('')}</div>
+    </div>`;
+  }
+  let note = t.note?`<div class="note">${t.note}</div>`:'';
+
+  return `
+  <div class="detail-hero">
+    <div class="hero-img" style="background-image:url('${t.img}')"></div>
+    <div class="hero-inner"><div class="wrap">
+      <a class="back" data-page="tours">← All tours</a>
+      <div class="route">${t.route}</div>
+      <h1>${t.name}</h1>
+      <p class="dlede">${t.blurb}</p>
+    </div></div>
+  </div>
+
+  <div class="facts"><div class="wrap"><div class="facts-row">
+    <div class="facts-stats">${facts}</div>
+    <a class="btn btn-gold" href="${t.book}" target="_blank" rel="noopener">Book &amp; pay now <span class="arr">→</span></a>
+  </div></div></div>
+
+  <div class="detail-body"><div class="wrap"><div class="detail-grid">
+    <div>
+      <p class="eyebrow">Overview</p>
+      <div class="overview"><p>${t.overview}</p></div>
+
+      <p class="eyebrow" style="margin-top:36px">Available dates</p>
+      <div class="dates-strip">${dates}<span class="date-pill" style="background:none;border-style:dashed;color:var(--arcilla)">+ custom dates on request</span></div>
+
+      <p class="eyebrow" style="margin-top:30px">The itinerary · day by day</p>
+      <div class="timeline">${itin}</div>
+      ${addon}
+      ${note}
+
+      <div class="policy">
+        <h4>Good to know</h4>
+        <p>${POLICY.deposit} ${POLICY.flights}</p>
+        <p>${POLICY.insurance}</p>
+        <h4 style="margin-top:20px">Cancellation policy</h4>
+        <ul>${POLICY.cancel.map(c=>`<li>${c}</li>`).join('')}</ul>
+      </div>
+    </div>
+
+    <aside>
+      <div class="sticky-card">
+        <div class="price-big">$${t.price}</div>
+        <div class="price-lbl">per person</div>
+        <div class="dep">${t.duration} · ${t.group} · 40% deposit to reserve</div>
+        <a class="btn btn-gold" href="${t.book}" target="_blank" rel="noopener">Book &amp; pay now</a>
+        <a class="btn btn-line" href="https://tally.so/r/KYNqXg?tour=${encodeURIComponent(t.name)}" target="_blank" rel="noopener">Request custom dates</a>
+        <ul class="incl">${incl}</ul>
+        <a class="btn btn-dark" href="mailto:info@wildwandertours.com" style="width:100%;justify-content:center">Email a question</a>
+      </div>
+    </aside>
+  </div></div></div>`;
+}
+['antioquia','citysea','guajira'].forEach(id=>{document.getElementById('page-'+id).innerHTML=buildTour(id);});
+
+/* FAQ */
+document.getElementById('faqList').innerHTML = FAQS.map(f=>`
+  <div class="faq">
+    <button aria-expanded="false"><span>${f[0]}</span><span class="ic" aria-hidden="true"></span></button>
+    <div class="ans"><p>${f[1]}</p></div>
+  </div>`).join('');
+
+/* ---------------- NAVIGATION ---------------- */
+const pages = {home:'page-home',tours:'page-tours',spanish:'page-spanish',antioquia:'page-antioquia',citysea:'page-citysea',guajira:'page-guajira',about:'page-about',faq:'page-faq',contact:'page-contact'};
+function showPage(id,push=true){
+  if(!pages[id]) id='home';
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(pages[id]).classList.add('active');
+  document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active',a.dataset.page===id));
+  window.scrollTo({top:0,behavior:'auto'});
+  forceSolid = (id==='faq' || id==='contact');
+  onScroll();
+  closeMenu();
+  runReveal();
+  if(push) history.replaceState(null,'','#'+id);
+}
+document.addEventListener('click',e=>{
+  const el=e.target.closest('[data-page]');
+  if(el){e.preventDefault();showPage(el.dataset.page);}
+});
+
+/* FAQ toggle */
+document.getElementById('faqList').addEventListener('click',e=>{
+  const btn=e.target.closest('button'); if(!btn)return;
+  const faq=btn.parentElement, ans=faq.querySelector('.ans'), open=faq.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+  ans.style.maxHeight = open ? ans.scrollHeight+'px' : 0;
+});
+
+/* mobile menu */
+const menuBtn=document.getElementById('menuBtn'), navlinks=document.getElementById('navlinks');
+function closeMenu(){navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}
+menuBtn.addEventListener('click',()=>{const o=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
+
+/* header solid on scroll */
+const hdr=document.getElementById('hdr');
+let forceSolid=false;
+function onScroll(){hdr.classList.toggle('solid', forceSolid || window.scrollY>40);}
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* scroll reveal */
+let io;
+function runReveal(){
+  const els=document.querySelectorAll('.page.active .section, .page.active .tour-card, .page.active .bio-card, .page.active .value-card, .page.active .band');
+  els.forEach(el=>{el.classList.add('reveal');});
+  if(io) io.disconnect();
+  io=new IntersectionObserver((ents)=>{ents.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(el=>io.observe(el));
+}
+
+/* ---------------- CUSTOM ITINERARY MODAL ---------------- */
+const customModalOverlay = document.getElementById('customModalOverlay');
+function openCustomModal(){
+  customModalOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCustomModal(){
+  customModalOverlay.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('customModalClose').addEventListener('click', closeCustomModal);
+customModalOverlay.addEventListener('click', (e)=>{ if(e.target===customModalOverlay) closeCustomModal(); });
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeCustomModal(); });
+document.getElementById('customItineraryForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const fd = new FormData(this);
+  const name = (fd.get('name')||'').trim();
+  const email = (fd.get('email')||'').trim();
+  const groupSize = (fd.get('groupSize')||'').trim();
+  const dates = (fd.get('dates')||'').trim();
+  const idea = (fd.get('idea')||'').trim();
+  const subject = `Custom itinerary request from ${name}`;
+  const body = `Name: ${name}\nEmail: ${email}\nGroup size: ${groupSize}\nRough dates: ${dates}\n\nTrip idea:\n${idea}`;
+  window.location.href = `mailto:info@wildwandertours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+/* spanish intro video: custom play button overlay */
+const spanishVideo = document.getElementById('spanishVideo');
+const spanishVideoCover = document.getElementById('spanishVideoCover');
+if(spanishVideo && spanishVideoCover){
+  spanishVideo.addEventListener('play', ()=> spanishVideoCover.classList.add('playing'));
+  spanishVideo.addEventListener('pause', ()=> spanishVideoCover.classList.remove('playing'));
+  spanishVideo.addEventListener('ended', ()=> spanishVideoCover.classList.remove('playing'));
+  spanishVideoCover.querySelector('.video-play').addEventListener('click', ()=> spanishVideo.play());
+}
+
+/* init from hash */
+showPage((location.hash||'#home').slice(1),false);
+runReveal();
+</script>
+</body>
+</html>
