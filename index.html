@@ -346,12 +346,6 @@ footer a:hover{color:var(--lienzo)}
   background:rgba(244,238,226,.16);backdrop-filter:blur(3px);border:1.5px solid rgba(244,238,226,.55);
   display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .2s,transform .2s}
 .video-play svg{width:20px;height:20px;fill:var(--lienzo);margin-left:3px}
-.hero-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;
-  background:rgba(244,238,226,.16);backdrop-filter:blur(3px);border:1.5px solid rgba(244,238,226,.55);z-index:2;
-  display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .2s,transform .2s;opacity:0;pointer-events:none}
-.hero-play svg{width:28px;height:28px;fill:var(--lienzo);margin-left:4px}
-.hero-play.show{opacity:1;pointer-events:auto}
-.hero-play:hover{transform:translate(-50%,-50%) scale(1.06)}
 .video-play:hover{transform:translate(-50%,-50%) scale(1.06)}
 .video-cover.playing .video-play{opacity:0;pointer-events:none}
 .video-cover::before{content:"";position:absolute;inset:0;pointer-events:none;
@@ -396,7 +390,6 @@ footer a:hover{color:var(--lienzo)}
       <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg">
         <source src="videos/hero.mp4" type="video/mp4">
       </video>
-      <div class="hero-play" id="heroPlay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
     </div>
     <div class="hero-inner">
       <div class="wrap">
@@ -1138,16 +1131,11 @@ if(spanishVideo && spanishVideoCover){
 
 /* hero video: explicit play button + retry on first interaction if the browser blocked autoplay */
 const heroVideo = document.getElementById('heroVideo');
-const heroPlay = document.getElementById('heroPlay');
-if(heroVideo && heroPlay){
+if(heroVideo){
   heroVideo.play().catch(()=>{});
-  heroVideo.addEventListener('play', ()=> heroPlay.classList.remove('show'));
-  heroVideo.addEventListener('pause', ()=> heroPlay.classList.add('show'));
-  heroPlay.addEventListener('click', ()=> heroVideo.play().catch(()=>{}));
   const resumeHeroVideo = () => { if(heroVideo.paused) heroVideo.play().catch(()=>{}); };
   document.addEventListener('touchstart', resumeHeroVideo, {once:true, passive:true});
   document.addEventListener('click', resumeHeroVideo, {once:true});
-  setTimeout(()=>{ if(heroVideo.paused) heroPlay.classList.add('show'); }, 400);
 }
 
 /* init from hash */
