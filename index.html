@@ -1129,6 +1129,15 @@ if(spanishVideo && spanishVideoCover){
   spanishVideoCover.querySelector('.video-play').addEventListener('click', ()=> spanishVideo.play());
 }
 
+/* hero video: retry autoplay on first interaction if the browser blocked it */
+const heroVideo = document.getElementById('heroVideo');
+if(heroVideo){
+  heroVideo.play().catch(()=>{});
+  const resumeHeroVideo = () => { if(heroVideo.paused) heroVideo.play().catch(()=>{}); };
+  document.addEventListener('touchstart', resumeHeroVideo, {once:true, passive:true});
+  document.addEventListener('click', resumeHeroVideo, {once:true});
+}
+
 /* init from hash */
 showPage((location.hash||'#home').slice(1),false);
 runReveal();
