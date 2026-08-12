@@ -248,6 +248,14 @@ header.solid .menu-btn span{background:var(--selva)}
 .policy p,.policy li{font-size:.88rem;color:var(--muted)}
 .policy ul{padding-left:18px;margin:0 0 14px}
 .note{background:rgba(230,160,44,.12);border-radius:12px;padding:16px 20px;font-size:.9rem;color:#5a4a1f;margin-top:18px}
+.insurance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.insurance-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.insurance-card .ic-badge{font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--arcilla);margin-bottom:14px}
+.insurance-card h3{font-family:"Fraunces";font-size:1.4rem;color:var(--selva);margin-bottom:12px}
+.insurance-card p{color:var(--muted);font-size:.95rem;flex:1;margin-bottom:18px}
+.insurance-card a{font-weight:600;font-size:.92rem;color:var(--verde);display:inline-flex;gap:.4em;align-items:center;text-decoration:none}
+.insurance-card a:hover{text-decoration:underline}
+.insurance-note{margin-top:28px;font-size:.85rem;color:var(--muted);max-width:70ch}
 
 /* ---------- about page ---------- */
 .bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px}
@@ -330,7 +338,7 @@ footer a:hover{color:var(--lienzo)}
   .navlinks a{color:var(--lienzo);font-size:1.25rem;font-family:"Fraunces";padding:10px 0;width:100%;border-bottom:1px solid rgba(244,238,226,.1)}
   header.solid .navlinks a{color:var(--lienzo)}
   .nav-cta .btn{display:none}
-  .lead-row,.split,.contact-grid,.bio-grid,.tours-grid,.value-grid,.ti-grid{grid-template-columns:1fr}
+  .lead-row,.split,.contact-grid,.bio-grid,.tours-grid,.value-grid,.ti-grid,.insurance-grid{grid-template-columns:1fr}
   .split-img{aspect-ratio:4/3;order:-1}
   .hero-meta div{padding:0 22px 0 0;margin:0 22px 14px 0}
   .facts-stats div{padding:6px 18px 6px 0;border:0}
@@ -718,7 +726,35 @@ footer a:hover{color:var(--lienzo)}
         <p class="sub" style="margin:14px auto 0">Everything travellers ask before they commit. Still wondering about something? We're a message away.</p>
       </div>
       <div class="faq-wrap" id="faqList"></div>
-      <div style="text-align:center;margin-top:46px">
+
+      <div style="margin-top:80px">
+        <p class="eyebrow">Before you go</p>
+        <h2>Travel insurance we recommend.</h2>
+        <p class="sub" style="margin-top:10px">We suggest a plan covering 100% of trip cost, at least $50,000 in medical evacuation, and $150,000 in emergency assistance and transportation. These three meet or exceed that bar:</p>
+        <div class="insurance-grid">
+          <div class="insurance-card">
+            <div class="ic-badge">Best for adventure</div>
+            <h3>World Nomads</h3>
+            <p>Built specifically for adventure travel and popular with small-group tours across South America. Covers whitewater rafting on the Standard plan — if you're doing the optional paragliding add-on in Jericó, choose the <b>Explorer</b> tier or higher, since Standard doesn't include it.</p>
+            <a href="https://www.worldnomads.com" target="_blank" rel="noopener">Get a quote <span class="arr">→</span></a>
+          </div>
+          <div class="insurance-card">
+            <div class="ic-badge">Our pick</div>
+            <h3>IMG Global</h3>
+            <p>What our own founders use for these exact trips, and had a good experience with. Solid adventure sports riders for extreme activities and reliable international claims support.</p>
+            <a href="https://www.imglobal.com" target="_blank" rel="noopener">Get a quote <span class="arr">→</span></a>
+          </div>
+          <div class="insurance-card">
+            <div class="ic-badge">Highest limits</div>
+            <h3>Allianz</h3>
+            <p>Top-tier plans offer medical evacuation coverage up to $1,000,000 — a strong option if you want the highest possible ceiling on medical costs.</p>
+            <a href="https://www.allianztravelinsurance.com" target="_blank" rel="noopener">Get a quote <span class="arr">→</span></a>
+          </div>
+        </div>
+        <p class="insurance-note">We're not a licensed insurance broker — these are recommendations based on our own research and experience running these trips, not financial advice. Always confirm coverage details directly with the provider before purchasing.</p>
+      </div>
+
+      <div style="text-align:center;margin-top:64px">
         <a class="btn btn-dark" data-page="contact">Ask us anything <span class="arr">→</span></a>
       </div>
     </div>
@@ -917,7 +953,7 @@ const TOURS = {
 const POLICY = {
   deposit:"A 40% deposit is required to reserve your place.",
   flights:"You're responsible for your flights to the tour's starting point — email us with any flight or travel questions.",
-  insurance:"Travel insurance is strongly recommended: we suggest a plan covering 100% of trip cost, at least $50,000 in medical evacuation, and $150,000 in emergency assistance and transportation.",
+  insurance:"Travel insurance is strongly recommended: we suggest a plan covering 100% of trip cost, at least $50,000 in medical evacuation, and $150,000 in emergency assistance and transportation. See our <a data-page=\"faq\">recommended plans</a>.",
   cancel:["Cancel 30 days or fewer before the start: no refund.","Cancel 31–60 days before the start: 30% of the trip cost refunded.","Cancellation policy applies once payment is received; trip interruption and cancellation insurance is required."]
 };
 
