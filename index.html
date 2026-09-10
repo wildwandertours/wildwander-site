@@ -247,6 +247,10 @@ header.solid .menu-btn span{background:var(--selva)}
 .policy h4{font-family:"Hanken Grotesk";font-weight:700;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--selva);margin-bottom:8px}
 .policy p,.policy li{font-size:.88rem;color:var(--muted)}
 .policy ul{padding-left:18px;margin:0 0 14px}
+.pack-list{padding-left:18px;margin:0}
+.pack-list>li{color:var(--ink);font-weight:600;margin-bottom:9px}
+.pack-list ul{list-style:disc;padding-left:20px;margin:5px 0 0}
+.pack-list ul li{color:var(--muted);font-weight:400;margin-bottom:3px}
 .note{background:rgba(230,160,44,.12);border-radius:12px;padding:16px 20px;font-size:.9rem;color:#5a4a1f;margin-top:18px}
 .insurance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
 .insurance-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
@@ -890,6 +894,21 @@ const TOURS = {
       ["Day 07","Explore Santa Fe de Antioquia","A leisurely morning, then a guided cocoa-farm tour in nearby Sopetrán, led by the family who runs it — an in-depth look at fine chocolate, with lunch included. The afternoon is yours to stroll the town or relax at the hotel.","Hotel Tonusco Campestre","Breakfast & lunch"],
       ["Day 08","Santa Fe → Medellín finale","Visit the Puente Colgante de Occidente, a historic suspension bridge once the longest of its kind in South America. The scenic return along the historic highway, past mountain towns and waterfalls, with lunch at one of the highest points. Back to Medellín for a festive finale dinner at Mamacita — and salsa dancing next door for anyone keen.","5-star hotel, Medellín","Breakfast & finale dinner"],
       ["Day 09","Time to return home","Private transport to the airport, timed to your flight. Thank you for such a fun tour!","","Breakfast"]
+    ],
+    packing:[
+      ["Sun protection",["Sun cream","Sun hat","Sunglasses","Sun shirts"]],
+      ["Insect repellent",[]],
+      ["Reusable water bottle",[]],
+      ["Shoes comfortable for walking",["They don't need to be fit for strenuous hiking, but comfortable and ok if they get a little dirty","Would be used for walking around towns, as well as easy walking, touring coffee farms, etc."]],
+      ["Sandals",[]],
+      ["Nicer closed-toe shoes for going out",["Not necessary but throw some in if you have room!"]],
+      ["Hot & humid weather clothing",["Shorts","Breathable pants/tops","Dresses and skirts"]],
+      ["Layers for when it cools down at night/rainy days",["Medellín and Santa Fe de Antioquia can be pretty hot","Jericó is generally really nice “springtime” weather and it cools down in the evening as the town is up at 2000m"]],
+      ["Rain jacket / windbreaker",[]],
+      ["Swim suit",[]],
+      ["Small day pack",[]],
+      ["Hand sanitizer / wet wipes",[]],
+      ["Portable phone charger",["No need to buy one if you don't already have one, but handy to bring along if you do"]]
     ]
   },
   citysea:{
@@ -922,7 +941,28 @@ const TOURS = {
         ["Day 10","Adventure & artisans → Medellín","Optional tandem paragliding over the Andean landscape, a visit to a traditional Carriel leather workshop, lunch in town, then the transfer back to Medellín and a farewell finale dinner."],
         ["Day 11","Departure","Private transport to the airport for international return flights."]
       ]
-    }
+    },
+    packing:[
+      ["Sun protection",["Sun cream (reef-safe recommended for snorkeling day)","Sun hat","Sunglasses","Sun shirts"]],
+      ["Insect repellent",[]],
+      ["Reusable water bottle",[]],
+      ["Shoes comfortable for walking and treks through uneven terrain",[]],
+      ["Sandals",[]],
+      ["Nicer closed-toe shoes for going out",["Not necessary, but throw some in if you have room!"]],
+      ["Beach ware",["Bathing suit","Sarong (optional)"]],
+      ["Quick-dry towel",[]],
+      ["Hot & humid weather clothing",["Shorts","Breathable pants/tops","Dresses and skirts"]],
+      ["Long hiking pants and long-sleeve breathable shirt comfortable for hiking",[]],
+      ["Layers for when it cools down at night/rainy days",["Especially if you are adding Jericó on to the end of your tour","Medellín and Santa Fe de Antioquia can be pretty hot","Jericó is generally really nice “springtime” weather, and it cools down in the evening as the town is up at 2000m"]],
+      ["Rain jacket / windbreaker",[]],
+      ["Small day pack",[]],
+      ["Dry bag (or large ziplock bags)",["Handy for the boat ride up the Arusí River and on snorkeling day, to help keep phones and cameras dry"]],
+      ["Headlamp or small flashlight",["The eco-lodge is remote with limited nighttime lighting"]],
+      ["Binoculars (optional)",["Great to have for whale-watching and wildlife spotting along the river trek"]],
+      ["Motion sickness medication",["Only necessary if you have a history of getting seasick — handy for the boat transfer and whale-watching tour"]],
+      ["Hand sanitizer / wet wipes",[]],
+      ["Portable phone charger",["No need to buy one if you don't already have one, but handy to bring along if you do"]]
+    ]
   },
   guajira:{
     name:"La Guajira Tour", route:"Atlantic Coast · Palomino to Punta Gallinas",
@@ -946,7 +986,27 @@ const TOURS = {
       ["Day 08","Tayrona National Park finale","Into Parque Tayrona via the El Zaino entrance for an easy 2-hour jungle hike to Playa del Cabo, passing beautiful beaches along the way. Swim in clear blue water, enjoy a beachfront lunch, then on to Santa Marta for a festive final dinner.","Casa Tunido, Santa Marta","Breakfast & finale dinner"],
       ["Day 09","Safe travels","After breakfast, private transport to the airport — and unforgettable memories of La Guajira and the Caribbean coast.","","Breakfast"]
     ],
-    note:"A note on comfort: due to limited infrastructure in La Guajira, this is not a luxury tour. The desert is hot and dry, and some places may not have running water. It's an incredible, culturally immersive adventure — but not a five-star trip."
+    note:"A note on comfort: due to limited infrastructure in La Guajira, this is not a luxury tour. The desert is hot and dry, and some places may not have running water. It's an incredible, culturally immersive adventure — but not a five-star trip.",
+    packing:[
+      ["Sun protection!",["Sun cream","Sun hat","Sunglasses","Long-sleeve sun shirt"]],
+      ["Insect repellent",[]],
+      ["Reusable water bottle",[]],
+      ["Shoes comfortable for easy hiking",[]],
+      ["Sandals",[]],
+      ["Nicer closed-toe shoes for going out",["Not necessary, but throw some in if you have room!"]],
+      ["Hot & humid weather clothing",["Shorts","Breathable pants/tops","Dresses and skirts"]],
+      ["Beach ware",["Bathing suit","Sarong (optional)"]],
+      ["Quick-dry towel",[]],
+      ["Long hiking pants and long-sleeve breathable shirt comfortable for hiking",[]],
+      ["Not necessary to bring many layers, as it stays pretty warm, even in the evening",["We suggest packing one sweater, flannel, etc. in case it gets chilly"]],
+      ["Rain jacket / windbreaker",[]],
+      ["Small day pack",[]],
+      ["Dry bag (or large ziplock bags)",["Helps protect phones and cameras from dust during the desert drives"]],
+      ["Headlamp or small flashlight",["Accommodations are rustic with limited infrastructure"]],
+      ["Bandana or buff",["The desert drives and salt flats kick up a lot of dust"]],
+      ["Hand sanitizer / wet wipes",["Handy given limited running water at some stops"]],
+      ["Portable phone charger",["No need to buy one if you don't already have one, but handy to bring along if you do"]]
+    ]
   }
 };
 
@@ -1011,6 +1071,10 @@ function dayRow(d){
   </div>`;
 }
 
+function packRow(p){
+  return `<li>${p[0]}${p[1].length?`<ul>${p[1].map(s=>`<li>${s}</li>`).join('')}</ul>`:''}</li>`;
+}
+
 function buildTour(id){
   const t=TOURS[id];
   const facts=t.facts.map(f=>`<div><div class="n">${f[0]}</div><div class="l">${f[1]}</div></div>`).join('');
@@ -1063,6 +1127,8 @@ function buildTour(id){
         <p>${POLICY.insurance}</p>
         <h4 style="margin-top:20px">Cancellation policy</h4>
         <ul>${POLICY.cancel.map(c=>`<li>${c}</li>`).join('')}</ul>
+        ${t.packing?`<h4 style="margin-top:20px">What to pack</h4>
+        <ul class="pack-list">${t.packing.map(packRow).join('')}</ul>`:''}
       </div>
     </div>
 
