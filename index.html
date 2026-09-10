@@ -247,6 +247,8 @@ header.solid .menu-btn span{background:var(--selva)}
 .policy h4{font-family:"Hanken Grotesk";font-weight:700;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--selva);margin-bottom:8px}
 .policy p,.policy li{font-size:.88rem;color:var(--muted)}
 .policy ul{padding-left:18px;margin:0 0 14px}
+.pack-box{background:rgba(35,92,63,.08);border-radius:12px;padding:22px 24px;margin-top:20px}
+.pack-box h4{margin-bottom:12px}
 .pack-list{padding-left:18px;margin:0}
 .pack-list>li{color:var(--ink);font-weight:600;margin-bottom:9px}
 .pack-list ul{list-style:disc;padding-left:20px;margin:5px 0 0}
@@ -1127,8 +1129,10 @@ function buildTour(id){
         <p>${POLICY.insurance}</p>
         <h4 style="margin-top:20px">Cancellation policy</h4>
         <ul>${POLICY.cancel.map(c=>`<li>${c}</li>`).join('')}</ul>
-        ${t.packing?`<h4 style="margin-top:20px">What to pack</h4>
-        <ul class="pack-list">${t.packing.map(packRow).join('')}</ul>`:''}
+        ${t.packing?`<div class="pack-box">
+          <h4>What to pack</h4>
+          <ul class="pack-list">${t.packing.map(packRow).join('')}</ul>
+        </div>`:''}
       </div>
     </div>
 
