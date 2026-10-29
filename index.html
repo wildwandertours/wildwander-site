@@ -1173,7 +1173,7 @@ function showPage(id,push=true){
   onScroll();
   closeMenu();
   runReveal();
-  if(push) history.replaceState(null,'','#'+id);
+  if(push && location.hash.slice(1)!==id) history.pushState(null,'','#'+id);
 }
 document.addEventListener('click',e=>{
   const el=e.target.closest('[data-page]');
@@ -1253,6 +1253,9 @@ if(heroVideo){
   document.addEventListener('touchstart', resumeHeroVideo, {once:true, passive:true});
   document.addEventListener('click', resumeHeroVideo, {once:true});
 }
+
+/* browser back/forward */
+window.addEventListener('popstate',()=>showPage((location.hash||'#home').slice(1),false));
 
 /* init from hash */
 showPage((location.hash||'#home').slice(1),false);
