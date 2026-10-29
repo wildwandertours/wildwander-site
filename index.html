@@ -130,7 +130,7 @@ header.solid .menu-btn span{background:var(--selva)}
   display:flex;flex-direction:column;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
 .tour-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(19,35,26,.6)}
 .tc-img{aspect-ratio:4/3.1;background:var(--verde-deep) center/cover no-repeat;position:relative}
-.tc-badge{position:absolute;bottom:14px;left:14px;background:var(--oro);color:var(--selva);font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:100px;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)}
+.tc-badge{align-self:flex-start;background:var(--oro);color:var(--selva);font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px;margin:12px 0 2px}
 .tc-tag{position:absolute;top:14px;left:14px;background:rgba(19,35,26,.78);color:var(--lienzo);backdrop-filter:blur(4px);
   font-family:"DM Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:100px}
 .tc-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
@@ -1035,10 +1035,11 @@ const FAQS = [
 function tourCard(id){
   const t=TOURS[id];
   return `<article class="tour-card" data-page="${id}">
-    <div class="tc-img" style="background-image:url('${t.img}')"><span class="tc-tag">${t.tag}</span>${t.badge?`<span class="tc-badge">${t.badge}</span>`:''}</div>
+    <div class="tc-img" style="background-image:url('${t.img}')"><span class="tc-tag">${t.tag}</span></div>
     <div class="tc-body">
       <div class="tc-route">${t.route}</div>
       <h3>${t.name}</h3>
+      ${t.badge?`<span class="tc-badge">${t.badge}</span>`:''}
       <p>${t.blurb}</p>
       <div class="tc-foot">
         <div class="tc-price">$${t.price}<span>per person · ${t.duration}</span></div>
