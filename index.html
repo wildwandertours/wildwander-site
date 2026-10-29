@@ -210,6 +210,7 @@ header.solid .menu-btn span{background:var(--selva)}
 .facts-stats div{padding:0 28px;border-right:1px solid rgba(244,238,226,.18)}
 .facts-stats div:first-child{padding-left:0}
 .facts-stats div:last-child{border:0}
+@media(min-width:761px){.facts-stats.five div{padding:0 17px}.facts-stats.five div:first-child{padding-left:0}}
 .facts-stats .n{font-family:"Fraunces";font-size:1.45rem;color:var(--oro-soft)}
 .facts-stats .l{font-family:"DM Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,238,226,.7);margin-top:3px}
 
@@ -880,12 +881,12 @@ const TOURS = {
     name:"Antioquia Tour", route:"Medellín · Jericó · Santa Fe de Antioquia",
     img:"images/img-16-d4540a0d7f02.jpg",
     tag:"Mountains & towns", duration:"9 days · 8 nights", days:"9", nights:"8",
-    group:"Max 10", price:"3,250", level:"Luxury",
+    group:"Max 15", price:"3,250", level:"Luxury",
     blurb:"Begin in the vibrant elegance of Medellín, then slip away to the colorful colonial towns of Jericó and Santa Fe de Antioquia — colonial charm meets timeless calm.",
     dates:["Apr 6 – 14, 2027","Sep 30 – Oct 8, 2027"],
     book:"https://tally.so/r/WOkv7R?tour=Antioquia%20Tour",
     overview:"Visit the luscious mountains and charming towns of Antioquia. Begin your journey in the vibrant elegance of Medellín before escaping to the picturesque towns of Jericó and Santa Fe de Antioquia, where colorful colonial charm meets timeless tranquility — an exclusive experience showcasing the finest of the Antioquia region.",
-    facts:[["9","Days"],["8","Nights"],["Max 10","Group size"],["5★","Hotels & villas"]],
+    facts:[["9","Days"],["8","Nights"],["Max 15","Group size"],["5★","Hotels & villas"]],
     incl:["Private transportation","Personal guides throughout","Daily breakfast + welcome & finale dinners","All lodging","Local SIM card on arrival","Entrance fees to included activities"],
     itin:[
       ["Day 01","Welcome to Medellín","Land at José María Córdova International Airport and be whisked by private transport to a luxurious five-star hotel in the heart of the city. After settling in, we ease into the evening with a gourmet welcome dinner at Alambique in the famous El Poblado neighborhood.","5-star hotel, central Medellín","Welcome dinner"],
@@ -918,12 +919,12 @@ const TOURS = {
     name:"City to Sea Tour", route:"Medellín · Pacific Coast (Nuquí)",
     img:"images/img-17-b29947041b05.jpg",
     tag:"Jungle & whales", badge:"Add-on: a small town in the Andes", duration:"9 days · 8 nights", days:"9", nights:"8",
-    group:"Small group", price:"4,000", level:"Adventure",
+    group:"Max 10", price:"4,000", level:"Adventure",
     blurb:"Start in lively Medellín, then fly to Nuquí on the Pacific coast and boat 45 minutes to a jungle eco-lodge ringed by waterfalls. Hike the rainforest, swim natural pools, and watch the humpback whales migrate.",
     dates:["Sep 18 – 26, 2027"],
     book:"https://tally.so/r/WOkv7R?tour=City%20to%20Sea%20Tour",
     overview:"Experience the beauty and culture of Colombia's Pacific Coast. Start in vibrant Medellín — dance, eat, and explore its complex history — then fly to Nuquí and take a 45-minute boat ride to our jungle hotel, surrounded by waterfalls and quiet beaches. From this base we hike rainforest, swim natural pools, enjoy traditional meals, and witness migrating humpback whales.",
-    facts:[["9","Days"],["8","Nights"],["Pacific","Coast of Chocó"],["+ Jericó","Optional add-on"]],
+    facts:[["9","Days"],["8","Nights"],["Max 10","Group size"],["Pacific","Coast of Chocó"],["+ Jericó","Optional add-on"]],
     incl:["Private transportation","Personal guides throughout","Daily breakfast + welcome & finale dinners","Breakfast, lunch & dinner at Madreagua Ecohotel","All lodging","Local SIM card on arrival","Entrance fees to included activities"],
     itin:[
       ["Day 01","Welcome to Medellín","An air-conditioned van meets you at José María Córdova International Airport for the drive to your five-star hotel. After settling in, a welcome dinner at Mamacita — a cozy yet upscale spot with a gourmet take on Colombian classics — sets the tone for the trip.","5-star hotel, central Medellín","Welcome dinner"],
@@ -972,12 +973,12 @@ const TOURS = {
     name:"La Guajira Tour", route:"Atlantic Coast · Palomino to Punta Gallinas",
     img:"images/img-18-da20e431ed67.jpg",
     tag:"Desert & Caribbean", duration:"9 days · 8 nights", days:"9", nights:"8",
-    group:"Small group", price:"3,250", level:"Off-grid",
+    group:"Max 10", price:"3,250", level:"Off-grid",
     blurb:"From the northernmost point of South America in the La Guajira desert to the white-sand beaches of Palomino — immersive, relaxing, and unlike anywhere else. A rustic, culturally rich adventure rather than a five-star trip.",
     dates:["Sep 9 – 17, 2027"],
     book:"https://tally.so/r/WOkv7R?tour=La%20Guajira%20Tour",
     overview:"From the northernmost point of South America in the La Guajira desert to the white-sand beaches of Palomino, this tour is immersive, relaxing, and unique — woven through with Wayuú culture, desert landscapes, and Caribbean coastline.",
-    facts:[["9","Days"],["8","Nights"],["Punta Gallinas","Tip of S. America"],["Wayuú","Cultural immersion"]],
+    facts:[["9","Days"],["8","Nights"],["Max 10","Group size"],["Punta Gallinas","Tip of S. America"],["Wayuú","Cultural immersion"]],
     incl:["Private transportation","Personal guides throughout","Daily breakfast + welcome & finale dinners","Lunches specified in the itinerary","All lodging","Local SIM card on arrival","Entrance fees to included activities"],
     itin:[
       ["Day 01","Welcome to Palomino","A private van meets you at Santa Marta airport for the scenic 1.5-hour drive to Palomino, a laid-back coastal town between mountains and the Caribbean. Check into Dreamer Hostel — pool, beach access, restaurant, bar, even yoga — and gather for a welcome dinner and trip briefing.","Dreamer Hostel, Palomino","Welcome dinner"],
@@ -1109,7 +1110,7 @@ function buildTour(id){
   </div>
 
   <div class="facts"><div class="wrap"><div class="facts-row">
-    <div class="facts-stats">${facts}</div>
+    <div class="facts-stats${t.facts.length>4?' five':''}">${facts}</div>
     <a class="btn btn-gold" href="${t.book}" target="_blank" rel="noopener">Book &amp; pay now <span class="arr">→</span></a>
   </div></div></div>
 
