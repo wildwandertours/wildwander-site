@@ -375,32 +375,32 @@ footer a:hover{color:var(--lienzo)}
 .tmap-head .eyebrow{margin:0}
 .tmap-hint{font-size:.8rem;color:var(--muted)}
 .tmap-grid{display:grid;grid-template-columns:minmax(120px,.4fr) 1fr;gap:14px;align-items:start}
-.tmap-loc,.tmap-detail{background:#D3E3E6;border-radius:14px;overflow:hidden}
+.tmap-loc,.tmap-detail{background:#CCE2E8;border-radius:14px;overflow:hidden}
 .tmap-loc svg{display:block;width:100%;height:auto}
 .tmap-detail{position:relative}
 .tmap-detail>svg{position:absolute;inset:0;width:100%;height:100%}
-.tm-land{fill:#EDF1E3;stroke:#8FB09B;stroke-width:1.4}
-.tmap-detail .tm-land{stroke-width:1.4;vector-effect:non-scaling-stroke}
-.tm-cities circle{fill:#5C6B5F}
-.tm-cities text{font:500 25px "Hanken Grotesk",sans-serif;fill:#5C6B5F}
+.tm-cities circle{fill:#13231A;stroke:#fff;stroke-width:3}
+.tm-cities text{font:600 25px "Hanken Grotesk",sans-serif;fill:#13231A;paint-order:stroke;stroke:rgba(255,255,255,.85);stroke-width:7px;stroke-linejoin:round}
 .tm-zoom{fill:rgba(230,160,44,.28);stroke:var(--arcilla);stroke-width:5}
-.tm-zlabel{font:700 30px "Hanken Grotesk",sans-serif;fill:var(--arcilla);paint-order:stroke;stroke:#EDF1E3;stroke-width:8px;stroke-linejoin:round}
+.tm-zlabel{font:700 30px "Hanken Grotesk",sans-serif;fill:#9C3F1C;paint-order:stroke;stroke:rgba(255,255,255,.9);stroke-width:9px;stroke-linejoin:round}
 .tm-water{font:italic 400 26px "Fraunces",Georgia,serif;fill:#5E8590}
-.tm-title{font:500 34px "DM Mono",monospace;letter-spacing:.3em;fill:rgba(35,92,63,.35)}
-.tm-route{fill:none;stroke:var(--arcilla);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.tm-title{font:500 34px "DM Mono",monospace;letter-spacing:.3em;fill:rgba(19,35,26,.45);paint-order:stroke;stroke:rgba(255,255,255,.35);stroke-width:6px}
+.tm-case{fill:none;stroke:rgba(255,255,255,.7);stroke-width:6.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.tm-route{fill:none;stroke:#B23A12;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .tm-road{stroke-dasharray:8 6}
 .tm-day{stroke-dasharray:1 6;stroke-width:3}
-.tm-flight{stroke:#4F7F8C;stroke-dasharray:2 7;stroke-width:3}
-.tm-addon{stroke:var(--oro);stroke-dasharray:8 6}
+.tm-flight{stroke:#2F5C69;stroke-dasharray:2 7;stroke-width:3}
+.tm-addon{stroke:#D98E0F;stroke-dasharray:8 6}
 .tmap-legend svg line{stroke:var(--arcilla);stroke-width:2.4;stroke-linecap:round}
 .tmap-legend svg line.tm-day{stroke-width:3;stroke-dasharray:1 6}
 .tmap-legend svg line.tm-road{stroke-dasharray:8 6}
-.tmap-legend svg line.tm-flight{stroke:#4F7F8C;stroke-width:3;stroke-dasharray:2 7}
+.tmap-legend svg line.tm-flight{stroke:#2F5C69;stroke-width:3;stroke-dasharray:2 7}
 .tmap-legend svg line.tm-addon{stroke:var(--oro);stroke-dasharray:8 6}
+.tm-sea.land{font:600 .66rem "DM Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:#4B4A36;text-shadow:0 0 3px rgba(255,255,255,.8),0 0 6px rgba(255,255,255,.7)}
 .tm-sea{position:absolute;transform:translate(-50%,-50%);font:italic 400 .84rem "Fraunces",Georgia,serif;color:#5E8590;white-space:nowrap;pointer-events:none}
 .tm-stop{position:absolute;width:26px;height:26px;transform:translate(-13px,-13px);padding:0;border:0;background:none;cursor:pointer;z-index:2}
 .tm-stop i,.tm-chip i,.tm-badge{font:600 .72rem "DM Mono",monospace;font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--verde-deep);color:var(--lienzo);border:2px solid #fff;box-shadow:0 4px 10px -3px rgba(19,35,26,.55);transition:transform .15s,background .15s}
-.tm-stop b{position:absolute;white-space:nowrap;font:600 .74rem "Hanken Grotesk",sans-serif;color:var(--selva);text-shadow:0 0 3px #EDF1E3,0 0 3px #EDF1E3,0 0 5px #EDF1E3,0 0 5px #EDF1E3;pointer-events:none}
+.tm-stop b{position:absolute;white-space:nowrap;font:600 .74rem "Hanken Grotesk",sans-serif;color:var(--selva);text-shadow:0 0 2px #fff,0 0 3px #fff,0 0 4px #fff,0 0 6px rgba(255,255,255,.9);pointer-events:none}
 .tm-stop.lp-r b{left:31px;top:50%;transform:translateY(-50%)}
 .tm-stop.lp-l b{right:31px;top:50%;transform:translateY(-50%)}
 .tm-stop.lp-t b{bottom:31px;left:50%;transform:translateX(-50%)}
@@ -424,6 +424,7 @@ footer a:hover{color:var(--lienzo)}
 .tmap-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:.76rem;color:var(--muted)}
 .tm-key{display:inline-flex;align-items:center;gap:8px}
 .tm-fine{margin-left:auto}
+.tmap-credit{margin:10px 0 0;font-size:.7rem;color:var(--muted);opacity:.8}
 .day.flash{background:rgba(230,160,44,.18);border-radius:12px;transition:background .4s}
 @media(max-width:600px){.tm-stop b{display:none}.tmap{padding:16px}.tmap-grid{grid-template-columns:1fr}.tmap-loc{max-width:210px}.tm-fine{margin-left:0}}
 </style>
@@ -1091,14 +1092,13 @@ const FAQS = [
 
 /* ---------------- RENDER ---------------- */
 /* ---------------- TOUR MAPS ---------------- */
-const COL_PATH="M394,51.9L392.2,52.5L390,53.8L383.2,56.3L374,58.7L362.1,61.7L359.4,64.9L347.6,85.2L337.7,89.3L334.1,92.3L331.4,96.1L325.5,103.2L323,108.6L316.5,120.4L313,135.2L311.6,143.5L309.7,155.5L306.8,161.6L302.9,167.3L298.8,172.8L295.2,178.9L292.2,183.7L291.7,185.3L293.2,186.6L300.3,185.3L303.2,183.9L307.1,182L309.5,183L312,188.2L314.8,188.9L317.4,188.2L320.2,189.6L323.7,202.6L326.7,213.6L333.7,220.5L339.2,225.9L340.5,230.6L341.8,237.4L342.1,240.6L340.4,242.6L337.7,246.7L337,254.5L336.6,257.1L336.1,264.3L336.4,268.8L337.9,272.3L340.3,274.2L345.2,275.3L349.6,276.5L352.2,282.5L355.8,290.2L359.7,293.4L365.4,295.5L369.4,294.7L379,293.4L387.1,293.7L399.1,295.7L403.6,295.7L409.3,295.3L419.5,291.1L423.1,290.5L427.2,290.9L433.2,293L436.5,294.6L440.6,296.4L446.7,297.6L450.6,297.4L453.5,297.3L455.2,298.1L464.8,310L473.1,320.3L480.3,328.9L488,338.3L488.6,338.8L492.1,337.6L494.5,338.1L496.6,340L500.3,339.2L505.5,335.8L513.1,335.1L523.2,337.2L536.4,337.2L552.8,335.1L563.1,332.9L567,330.5L573.6,330.8L581.6,332.9L585.9,336L586.4,339L588,343.7L586.3,348.5L581.2,353.3L578.4,359.5L577.9,367.1L575.3,372.6L570.6,376.2L568.8,381.5L569.8,388.4L569.3,398.5L567.2,411.7L567.2,419.7L569.3,422.2L570.2,426L570.1,430.8L570.8,435.1L573.4,440.7L576.9,451.8L579.9,456.6L582.4,458.3L585.1,460.4L592.6,471.8L594.4,474.2L593.9,476.3L593.2,477.9L592.3,478.9L584.3,485.6L568.3,500.4L566.9,502.2L567,505.3L571.7,503.3L576.6,505L579.1,505.3L580.2,506.5L581.6,510.5L583.3,511.2L585.7,512.8L590.4,517L594.4,521.4L597.4,523.5L599.5,525.5L600.1,528.4L599.2,531.2L601.7,537.9L603.4,539.9L604.3,542.5L603.4,545L605.5,548L607.8,553.8L610.6,561L610.9,565L612.1,566.8L613.4,572.1L615.8,577.1L615.2,580.5L616.2,583.8L606.7,586.1L605.9,585.7L605.3,584.5L605.6,575L605.5,564.2L604,559.8L599.7,552.8L594,543.4L592.4,540.7L590,539.2L587.1,538.9L585,539.6L582.2,541.4L579.5,543.2L574.4,548.9L569.2,555.5L566.2,557L563.2,557.6L560.5,557.4L558.4,555.6L556.1,552L553.5,547.2L550.3,545.6L549.1,547.1L548,549.9L547.2,552.7L549.3,556.3L551.2,559L548,558.9L537.8,558.9L526.1,558.9L514.3,558.9L503.8,558.9L494,558.9L490.3,558.7L486.5,557.1L482.9,556.3L480.9,556.5L477.5,558L473,558.3L470,559.7L467.6,559.6L467.5,567.8L467.5,579.6L467.4,592L470.1,591.1L472.4,591.2L474.2,592L479,591.3L481.6,591.7L484.1,592L486.5,592.1L487.9,593.1L489.9,592.9L491.9,591.8L494.4,592.5L497.1,594.2L498.8,596.8L500.3,600.1L501.8,601.8L501.7,604.9L501.7,607.3L501.2,609.4L501.8,610.7L502.3,612.1L502.2,612.9L501.3,613.2L499.4,613.5L497.3,613.7L495.8,613.6L494.7,612.4L493.6,612.2L492.1,612.4L490.4,611.7L489,610.1L486.4,608.5L483.6,609.2L481.8,610L479.8,611L478.1,612L476.3,611.7L474.1,612.5L472.2,613.7L469.6,614.6L466.9,615.1L463.7,615.5L460.7,615.7L457.3,616.1L457.1,622.6L456.7,635.5L456.5,644.1L456.5,651.9L457.8,654.8L463.9,660.9L468.6,664.1L472.6,667.6L476.6,669.1L478.3,670.5L479.4,672.7L480,675L480.4,677L480,679.1L479,681L479.4,683.1L480.8,684.8L481.3,686.9L482.3,688.9L482.8,690.9L484,692.3L485.6,693.3L487.6,694.9L487.8,696.5L487.6,698.2L487.5,699.6L489.4,702.6L490,704.7L489.1,707.3L488.3,716.1L486.1,726.1L484.7,733.7L482.4,746.2L479.8,760.7L476.5,778.4L473.4,795.8L470.3,812.7L467.5,828L464.4,844.8L462.6,855L461.7,856.8L459.1,853.1L455.3,849.6L451.6,847.5L450.1,844.8L448,839.1L445.1,837.2L443,835.7L441,835.9L438.9,837.5L435.7,838.5L433.5,838.3L424.7,834.4L423.2,834.1L428.9,825.2L439.1,809.4L445.5,799.4L452.6,788.2L456.3,782.5L456.8,781.5L456.8,780.1L455.2,777.9L451.8,777L447.8,775.3L445.3,772.6L441.8,771.5L439.1,769.5L434.2,767.7L431.2,765.9L427.6,765.3L424.7,762.1L414.3,755.9L411.6,755.3L408.6,756.3L404.3,757.3L400.2,760.7L395,761.7L390.2,761.7L387.6,759.7L385.2,759L382,756.2L376.4,754.1L372.4,752.6L369.9,753.3L366.6,756.4L363.4,759.4L360.8,761.3L357.3,761.2L353.2,764L349.1,765L345,765.5L340.2,766.4L335,764.8L330.7,763.3L328.7,762.6L327,763.1L324.3,764.6L319.4,765.3L315.6,765.4L312.9,764.7L310.5,762L306.6,760.6L302.3,758.9L301.4,755.4L302,752.8L303.7,749.1L302.7,745.2L300.9,739L300.2,736.5L298.8,734.4L296.7,733.6L292.5,734.2L288,731.9L285.2,729.7L283.7,726.9L285.3,721.8L283.9,717.5L281.2,715.1L279.5,710.8L276.8,707.4L273.2,705.7L269.6,705.9L266.8,704.8L263.7,701.3L260.7,699.9L257.3,696.4L251,694.9L247.7,693.5L245.8,691.4L243.3,687.5L243.6,685.4L242.3,683.3L241.3,679.6L239.1,674L236.7,670.9L234.3,668.5L232.2,666.5L229.2,663.5L225.4,661.8L222.2,659.9L221,657.2L219.9,655L218.1,655.2L215.6,655L212.7,654.4L209.8,652.8L207.3,650.8L203.1,647.5L200.8,647.1L198.8,647.1L195.8,650.3L186.8,646.9L179.1,641.9L171.2,640.5L166,637.5L161.3,632.6L158.7,629.3L156.6,627.7L146.5,623L144.4,622.6L140.6,624.8L139.3,626.1L139.1,629.8L138.6,631.9L135.3,633.2L129.8,633L126.1,631.6L123.5,631.4L123,632.5L121.6,632.9L118.5,632.6L114,631.6L109.9,630.2L104.3,627.2L101.7,627.6L95.4,627L90.2,625.3L88.9,623.8L86.6,613.2L85.9,612.4L83.7,612L79.9,610.5L77.6,608.8L76.3,605.9L74.9,603.1L68.5,603.7L58.1,600.1L51,596.6L44.4,592.7L34.4,585.1L30.6,583.2L25.9,580.8L23.1,577.1L18.6,573.3L17,572.2L15.6,568.8L8.7,563.8L12.1,557.4L20.4,552.6L31.2,556.3L32.5,548.8L28.6,542.2L29.1,529.7L30.4,527.2L33.3,523.8L37,521.5L39.2,520.8L42.9,522L45.2,519.5L54,520.6L56.7,519.5L58.5,517.8L60.6,516.6L63.4,513.5L65,510.1L66.3,508.7L69.3,509.2L69.6,507.7L71.2,505.6L76.5,501.1L76.4,499L75,494.6L75.3,493L78.4,492.4L82,491.2L84,487L86.4,483.3L89.1,477.9L92.2,477.6L93.8,471.3L97.9,465.7L106.2,449.3L103.7,449.7L101.7,451.9L99.4,451.6L96.8,450.3L97.6,443L96.1,442.1L92.1,447.8L88.6,442L88.3,438.5L89.8,435L89.6,432.6L84,434.4L84.2,432.2L87.7,429.9L89.3,427.6L92.3,425.1L93.6,421.3L94.3,415.3L95.7,408.9L94.7,405.8L93,403.1L91.7,391.2L92,384.2L91.3,378.8L89.9,374.2L83.3,368.1L93.8,361.2L97.5,356L92.8,345.2L86.5,336.2L86.3,330.7L88,331.4L90.1,331.2L92,319.8L91.6,316.2L88.1,310.5L83.7,310.3L79.9,303.1L77.7,301.5L76,297L69.8,288.1L64.9,283.5L68.6,272.9L71.8,270.8L72.8,268.2L71.6,261.6L71.9,260.1L72.7,259.4L73.4,259.5L74.7,260.4L77.1,263.3L79.1,266.8L80.7,267.8L83.1,266.7L92.5,259.7L91.9,257.5L92.7,253.2L95.9,249.6L99.2,248.4L100.2,246.4L99.4,243.3L95.9,235.6L92.7,231.5L90.7,227.4L89.6,223.6L86.1,220.1L87.6,216.7L90.3,212.8L91.3,212.1L92.8,213.2L96.9,220.3L103.5,225L110.4,232.5L113.2,237.7L115.5,238.6L117.4,240.5L116.5,241.9L114.4,243.3L113.8,246.3L115.2,248L116.7,249.1L120.7,248.4L122.9,244.9L121.4,229.5L119.1,221.8L116.4,219.4L114,216.3L115.6,214L119.9,213L125.5,210.3L146.2,195.5L153.2,181.7L158.6,176.7L164.7,173.5L172.2,174.2L178,172.5L179.8,168.1L178.2,162.1L176,158.5L178.1,153.3L180.4,145.4L180.2,138.7L183.1,134.7L182.1,133.2L177.9,136.4L174.6,137.8L176.5,135.2L182.3,128.6L185.4,118.6L187.7,114.5L196,108.6L197.6,105.8L203.8,101.5L213.9,92.1L217.8,89.5L237.3,95.5L243.5,95.2L242.4,96.3L239.5,96.6L235.4,98.3L234.2,101.9L237,105.6L240,106.7L242.5,104.3L245,97.4L249,89.7L250,81.7L252.9,79L257,78L264.5,79.6L270.2,81.2L276.2,81.4L294.3,80.2L323.9,59.4L337.6,54.9L346.2,50.5L351.7,42L353.2,35.6L357.2,33.1L361.5,33.1L363.4,31.5L364,29.5L374.3,24L380.1,23.3L385.3,23.4L396.9,28.2L402.2,36.8L403.1,42.7L395.8,49.1L394,51.9ZM54.3,517.9L53,519L50.4,517L49.5,514.5L51.1,512.7L53.1,513.3L54,514.8L54.3,517.9Z";
 const MK=50, MX0=-79.2, MY0=12.9;
 const mp=(lon,lat)=>[(lon-MX0)*MK,(MY0-lat)*MK];
 const LOC_CITIES=[["Bogotá",4.711,-74.0721],["Cartagena",10.391,-75.4794],["Cali",3.4516,-76.532]];
 const TOUR_MAPS={
   antioquia:{
     bbox:[-76.7,5.45,-74.95,6.95], area:"Antioquia",
-    notes:[{t:"Andes Mountains",lon:-76.35,lat:6.8}],
+    notes:[{t:"Andes Mountains",lon:-76.2,lat:6.85,land:true}],
     stops:[
       {n:"1",name:"Medellín",lat:6.2442,lon:-75.5812,lp:"l",days:"Days 01–02 & 08–09",note:"Your welcome dinner, a flexible city tour, and the finale dinner at the end of the trip.",ref:[0,0]},
       {n:"2",name:"Eastern towns",lat:6.04,lon:-75.43,lp:"r",days:"Day 03",note:"A day trip east of Medellín through El Retiro, La Ceja, and El Carmen de Viboral — colonial towns known for desserts, art, and ceramics.",ref:[0,2]},
@@ -1139,9 +1139,11 @@ function tourMapHTML(id){
   const [x0,y0]=mp(w0,n0), [x1,y1]=mp(e0,s0), W=x1-x0, H=y1-y0;
   const pc=(lon,lat)=>{const [x,y]=mp(lon,lat);return [((x-x0)/W*100).toFixed(2),((y-y0)/H*100).toFixed(2)];};
   const pt=s=>{const [x,y]=mp(s.lon,s.lat);return (x-x0).toFixed(1)+','+(y-y0).toFixed(1);};
-  const routes=m.routes.map(r=>`<polyline class="tm-route tm-${r.type}" points="${r.pts.map(i=>pt(m.stops[i])).join(' ')}"/>`).join('');
+  const rpts=r=>r.pts.map(i=>pt(m.stops[i])).join(' ');
+  const cases=m.routes.map(r=>`<polyline class="tm-case" points="${rpts(r)}"/>`).join('');
+  const routes=m.routes.map(r=>`<polyline class="tm-route tm-${r.type}" points="${rpts(r)}"/>`).join('');
   const pins=m.stops.map((s,i)=>{const [l,t]=pc(s.lon,s.lat);return `<button type="button" class="tm-stop lp-${s.lp}${s.addon?' addon':''}" data-stop="${i}" style="left:${l}%;top:${t}%" aria-label="${s.name}, ${s.days}"><i>${s.n}</i><b>${s.name}</b></button>`;}).join('');
-  const notes=m.notes.map(n=>{const [l,t]=pc(n.lon,n.lat);return `<span class="tm-sea" style="left:${l}%;top:${t}%">${n.t}</span>`;}).join('');
+  const notes=m.notes.map(n=>{const [l,t]=pc(n.lon,n.lat);return `<span class="tm-sea${n.land?' land':''}" style="left:${l}%;top:${t}%">${n.t}</span>`;}).join('');
   const chips=m.stops.map((s,i)=>`<button type="button" class="tm-chip${s.addon?' addon':''}" data-stop="${i}"><i>${s.n}</i>${s.name}</button>`).join('');
   const types=[...new Set(m.routes.map(r=>r.type))];
   const legend=types.map(t=>`<span class="tm-key"><svg width="30" height="6" viewBox="0 0 30 6" aria-hidden="true"><line class="tm-${t}" x1="1" y1="3" x2="29" y2="3"/></svg>${ROUTE_LABEL[t]}</span>`).join('');
@@ -1152,7 +1154,7 @@ function tourMapHTML(id){
     <div class="tmap-head"><p class="eyebrow">Where you'll travel</p><span class="tmap-hint">Tap a stop to see what happens there</span></div>
     <div class="tmap-grid">
       <div class="tmap-loc"><svg viewBox="-110 0 740 875" role="img" aria-label="Map of Colombia with the ${m.area} area highlighted">
-        <path class="tm-land" d="${COL_PATH}"/>
+        <image href="images/map-locator.webp" x="-110" y="0" width="740" height="875"/>
         <g class="tm-cities">${cities}</g>
         <rect class="tm-zoom" x="${rx0.toFixed(1)}" y="${ry0.toFixed(1)}" width="${(rx1-rx0).toFixed(1)}" height="${(ry1-ry0).toFixed(1)}" rx="8"/>
         <text class="tm-zlabel" x="${(lab[0]+12).toFixed(1)}" y="${lab[1].toFixed(1)}">${m.area}</text>
@@ -1162,8 +1164,8 @@ function tourMapHTML(id){
       </svg></div>
       <div class="tmap-detail" style="aspect-ratio:${W.toFixed(1)}/${H.toFixed(1)}">
         <svg viewBox="0 0 ${W.toFixed(1)} ${H.toFixed(1)}" preserveAspectRatio="none" aria-hidden="true">
-          <g transform="translate(${(-x0).toFixed(1)},${(-y0).toFixed(1)})"><path class="tm-land" d="${COL_PATH}"/></g>
-          ${routes}
+          <image href="images/map-${id}.webp" x="0" y="0" width="${W.toFixed(1)}" height="${H.toFixed(1)}" preserveAspectRatio="none"/>
+          ${cases}${routes}
         </svg>
         ${notes}${pins}
       </div>
@@ -1175,6 +1177,7 @@ function tourMapHTML(id){
       <button type="button" class="tm-go">See it in the itinerary <span aria-hidden="true">↓</span></button>
     </div>
     <div class="tmap-legend">${legend}<span class="tm-key tm-fine">Routes are approximate.</span></div>
+    <p class="tmap-credit">Terrain: Mapzen / AWS Terrain Tiles (SRTM, GEBCO). Shaded relief rendered for this site.</p>
   </div>`;
 }
 
