@@ -212,6 +212,7 @@ header.solid .menu-btn span{background:var(--selva)}
 .facts-stats div:last-child{border:0}
 @media(min-width:761px){.facts-stats.five div{padding:0 17px}.facts-stats.five div:first-child{padding-left:0}}
 .facts-stats .n{font-family:"Fraunces";font-size:1.45rem;color:var(--oro-soft)}
+.facts-stats .n.long{font-size:1.1rem;line-height:1.15;max-width:11em;padding-top:2px}
 .facts-stats .l{font-family:"DM Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,238,226,.7);margin-top:3px}
 
 .detail-body{padding:clamp(60px,8vw,100px) 0}
@@ -1036,7 +1037,7 @@ const TOURS = {
     dates:["Sep 9 – 17, 2027"],
     book:"https://tally.so/r/WOkv7R?tour=La%20Guajira%20Tour",
     overview:"From the northernmost point of South America in the La Guajira desert to the white-sand beaches of Palomino, this tour is immersive, relaxing, and unique — woven through with Wayuú culture, desert landscapes, and Caribbean coastline.",
-    facts:[["9","Days"],["8","Nights"],["Max 10","Group size"],["Punta Gallinas","Tip of S. America"],["Wayuú","Cultural immersion"]],
+    facts:[["9","Days"],["8","Nights"],["Max 10","Group size"],["Northernmost tip of S America","Punta Gallinas"],["Wayuú","Cultural immersion"]],
     incl:["Private transportation","Personal guides throughout","Daily breakfast + welcome & finale dinners","Lunches specified in the itinerary","All lodging","Local SIM card on arrival","Entrance fees to included activities"],
     itin:[
       ["Day 01","Welcome to Palomino","A private van meets you at Santa Marta airport for the scenic 1.5-hour drive to Palomino, a laid-back coastal town between mountains and the Caribbean. Check into Dreamer Hostel — pool, beach access, restaurant, bar, even yoga — and gather for a welcome dinner and trip briefing.","Dreamer Hostel, Palomino","Welcome dinner"],
@@ -1255,7 +1256,7 @@ function packRow(p){
 
 function buildTour(id){
   const t=TOURS[id];
-  const facts=t.facts.map(f=>`<div><div class="n">${f[0]}</div><div class="l">${f[1]}</div></div>`).join('');
+  const facts=t.facts.map(f=>`<div><div class="n${f[0].length>14?' long':''}">${f[0]}</div><div class="l">${f[1]}</div></div>`).join('');
   const dates=t.dates.map(d=>`<span class="date-pill">${d}</span>`).join('');
   const incl=t.incl.map(i=>`<li>${i}</li>`).join('');
   const itin=t.itin.map(dayRow).join('');
